@@ -75,7 +75,8 @@ export default function Hero() {
           </div>
 
           {/* CTA Button */}
- <button
+<div className="mb-12">
+            <button
               onClick={scrollToEarlyAccess}
               className="group relative inline-flex items-center justify-center px-12 py-6 text-xl font-bold text-white bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-full hover:scale-105 transform transition-all duration-300 shadow-2xl hover:shadow-purple-500/50"
             >
@@ -83,6 +84,8 @@ export default function Hero() {
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </button>
+            <p className="text-gray-400 mt-4 text-sm">Be among the first to get early access</p>
+          </div>
             
             <p className="text-gray-400 mt-4 text-sm">Be among the first to get early access</p>
 
