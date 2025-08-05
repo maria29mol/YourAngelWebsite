@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Shield, Mail, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Heart, Shield, Mail, Instagram, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -33,20 +33,12 @@ export default function Footer() {
                 <Instagram className="w-5 h-5 text-gray-400 group-hover:text-pink-400" />
               </a>
               <a 
-                href="https://linkedin.com/company/yourangel" 
+                href="https://www.linkedin.com/company/yourangel-ai/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-3 bg-white/5 rounded-full border border-white/10 hover:border-blue-400/50 hover:bg-blue-400/10 transition-all group"
               >
                 <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-blue-400" />
-              </a>
-              <a 
-                href="https://twitter.com/yourangel_ai" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="p-3 bg-white/5 rounded-full border border-white/10 hover:border-blue-400/50 hover:bg-blue-400/10 transition-all group"
-              >
-                <Twitter className="w-5 h-5 text-gray-400 group-hover:text-blue-400" />
               </a>
             </div>
           </div>
@@ -54,7 +46,6 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-4">Support</h3>
             <ul className="space-y-3 text-gray-300">
-              <li><a href="#" className="hover:text-purple-400 transition-colors">Crisis Resources</a></li>
               <li><a href="#" className="hover:text-purple-400 transition-colors">How It Works</a></li>
               <li><a href="#" className="hover:text-purple-400 transition-colors">Privacy & Safety</a></li>
               <li><a href="#" className="hover:text-purple-400 transition-colors">FAQ</a></li>
