@@ -52,6 +52,7 @@ export default function CTA() {
       return false;
     }
     if (formData.age < 13 || formData.age > 19) {
+    }
     if (formData.age < 1 || formData.age > 120) {
       setError('Please enter a valid age');
       return false;
