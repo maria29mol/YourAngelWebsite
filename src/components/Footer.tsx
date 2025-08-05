@@ -11,7 +11,7 @@ export default function Footer() {
               <img 
                 src="/logo.png" 
                 alt="YourAngel Logo" 
-                className="h-10 w-auto filter brightness-0 invert"
+               className="h-10 w-auto"
               />
               <span className="text-2xl font-bold text-white">YourAngel</span>
             </div>

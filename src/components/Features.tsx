@@ -65,7 +65,7 @@ export default function Features() {
                 <img 
                   src="/logo.png" 
                   alt="YourAngel Logo" 
-                  className="h-8 w-auto filter brightness-0 invert"
+                 className="h-8 w-auto opacity-30"
                 />
               </div>
               

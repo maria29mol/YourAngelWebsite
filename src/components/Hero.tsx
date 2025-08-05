@@ -41,7 +41,7 @@ export default function Hero() {
             <img 
               src="/logo.png" 
               alt="YourAngel Logo" 
-              className="h-20 w-auto filter brightness-0 invert"
+             className="h-20 w-auto"
             />
           </div>
 
