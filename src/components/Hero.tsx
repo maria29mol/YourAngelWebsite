@@ -39,7 +39,7 @@ export default function Hero() {
           {/* Logo */}
           <div className="mb-8 flex justify-center">
             <img 
-              src="/Black and Gray Angel Wings Company Logo (2).png" 
+              src="/logo.png" 
               alt="YourAngel Logo" 
               className="h-20 w-auto filter brightness-0 invert"
             />
@@ -92,13 +92,6 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </button>
             <p className="text-gray-400 mt-4 text-sm">Be among the first to get early access</p>
-          </div>
-
-          {/* Crisis message */}
-          <div className="bg-red-500/20 backdrop-blur-sm border border-red-400/30 rounded-2xl p-6 max-w-2xl mx-auto">
-            <p className="text-red-200 font-medium">
-              🚨 In immediate crisis? Call 988 (Suicide & Crisis Lifeline) or text "HELLO" to 741741
-            </p>
           </div>
         </div>
       </div>

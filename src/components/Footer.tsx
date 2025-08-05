@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <img 
-                src="/Black and Gray Angel Wings Company Logo (2).png" 
+                src="/logo.png" 
                 alt="YourAngel Logo" 
                 className="h-10 w-auto filter brightness-0 invert"
               />
@@ -40,7 +40,7 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-300">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span>hello@yourangle.ai</span>
+                <span>yourangelbuisness@gmail.com</span>
               </li>
               <li className="flex items-center gap-2">
                 <Shield className="w-4 h-4" />
@@ -61,13 +61,6 @@ export default function Footer() {
               <a href="#" className="hover:text-purple-400 transition-colors">Cookie Policy</a>
             </div>
           </div>
-        </div>
-
-        {/* Crisis hotline */}
-        <div className="mt-8 bg-red-500/10 border border-red-400/30 rounded-2xl p-6 text-center">
-          <p className="text-red-200 font-medium">
-            🚨 <strong>Crisis Support:</strong> Call 988 (Suicide & Crisis Lifeline) or text "HELLO" to 741741
-          </p>
         </div>
       </div>
     </footer>

@@ -63,7 +63,7 @@ export default function Features() {
               {/* Logo watermark */}
               <div className="absolute top-4 right-4 opacity-10">
                 <img 
-                  src="/Black and Gray Angel Wings Company Logo (2).png" 
+                  src="/logo.png" 
                   alt="YourAngel Logo" 
                   className="h-8 w-auto filter brightness-0 invert"
                 />
