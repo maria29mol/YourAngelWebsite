@@ -28,7 +28,7 @@ export default function CTA() {
   const [formData, setFormData] = useState<EarlyAccessUser>({
     email: '',
     country: '',
-    age: 16,
+    age: 0,
     gender: '',
     main_pain_point: '',
     how_did_you_hear: ''
@@ -41,7 +41,7 @@ export default function CTA() {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: name === 'age' ? parseInt(value) || 16 : value
+      [name]: name === 'age' ? parseInt(value) || 0 : value
     }));
     setError(''); // Clear error when user starts typing
   };
@@ -53,7 +53,7 @@ export default function CTA() {
     }
     if (formData.age < 13 || formData.age > 19) {
     }
-    if (formData.age < 1 || formData.age > 120) {
+    if (formData.age < 1 || formData.age > 150) {
       setError('Please enter a valid age');
       return false;
     }
@@ -93,7 +93,7 @@ export default function CTA() {
       setFormData({
         email: '',
         country: '',
-        age: 16,
+        age: 0,
         gender: '',
         main_pain_point: '',
         how_did_you_hear: ''
@@ -184,7 +184,7 @@ export default function CTA() {
                       value={formData.age}
                       onChange={handleInputChange}
                       min="1"
-                      max="120"
+                      max="150"
                       placeholder="Enter your age *"
                       className="w-full pl-14 pr-6 py-4 text-lg bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-300 focus:outline-none focus:border-purple-400 focus:bg-white/20 transition-all"
                       required
