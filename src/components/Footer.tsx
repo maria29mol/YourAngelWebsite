@@ -42,10 +42,6 @@ export default function Footer() {
                 <Mail className="w-4 h-4" />
                 <span>yourangelbuisness@gmail.com</span>
               </li>
-              <li className="flex items-center gap-2">
-                <Shield className="w-4 h-4" />
-                <span>HIPAA Compliant</span>
-              </li>
             </ul>
           </div>
         </div>

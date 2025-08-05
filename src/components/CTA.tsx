@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Mail, CheckCircle, Sparkles, User, Globe, Calendar } from 'lucide-react';
+import { ArrowRight, Mail, CheckCircle, Sparkles, User, Globe, Calendar, Heart, Radio } from 'lucide-react';
 import { supabase, type EarlyAccessUser } from '../lib/supabase';
 
 const countries = [
@@ -19,13 +19,19 @@ const painPoints = [
   'Identity questions', 'Bullying', 'Eating concerns', 'Other'
 ];
 
+const hearAboutUs = [
+  'Instagram', 'TikTok', 'LinkedIn', 'Harvard & Harvard programs', 
+  'Friends or Family', 'Other'
+];
+
 export default function CTA() {
   const [formData, setFormData] = useState<EarlyAccessUser>({
     email: '',
     country: '',
     age: 16,
     gender: '',
-    main_pain_point: ''
+    main_pain_point: '',
+    how_did_you_hear: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -41,7 +47,7 @@ export default function CTA() {
   };
 
   const validateForm = () => {
-    if (!formData.email || !formData.country || !formData.gender) {
+    if (!formData.email || !formData.country || !formData.gender || !formData.main_pain_point || !formData.how_did_you_hear) {
       setError('Please fill in all required fields');
       return false;
     }
@@ -87,7 +93,8 @@ export default function CTA() {
         country: '',
         age: 16,
         gender: '',
-        main_pain_point: ''
+        main_pain_point: '',
+        how_did_you_hear: ''
       });
       
       // Reset success message after 5 seconds
@@ -176,7 +183,7 @@ export default function CTA() {
                       onChange={handleInputChange}
                       min="13"
                       max="19"
-                      placeholder="Age *"
+                      placeholder="Enter your age (13-19) *"
                       className="w-full pl-14 pr-6 py-4 text-lg bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-300 focus:outline-none focus:border-purple-400 focus:bg-white/20 transition-all"
                       required
                       disabled={isLoading}
@@ -202,22 +209,41 @@ export default function CTA() {
                   </select>
                 </div>
 
-                {/* Main Pain Point (Optional) */}
+                {/* Main Pain Point (Required) */}
                 <div className="relative">
+                  <Heart className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
                   <select
                     name="main_pain_point"
                     value={formData.main_pain_point}
                     onChange={handleInputChange}
-                    className="w-full pl-6 pr-6 py-4 text-lg bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white focus:outline-none focus:border-purple-400 focus:bg-white/20 transition-all appearance-none"
+                    className="w-full pl-14 pr-6 py-4 text-lg bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white focus:outline-none focus:border-purple-400 focus:bg-white/20 transition-all appearance-none"
+                    required
                     disabled={isLoading}
                   >
-                    <option value="" className="bg-gray-800">What's your main concern? (Optional)</option>
+                    <option value="" className="bg-gray-800">What's your main concern? *</option>
                     {painPoints.map(point => (
                       <option key={point} value={point} className="bg-gray-800">{point}</option>
                     ))}
                   </select>
                 </div>
 
+                {/* How did you hear about us */}
+                <div className="relative">
+                  <Radio className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
+                  <select
+                    name="how_did_you_hear"
+                    value={formData.how_did_you_hear}
+                    onChange={handleInputChange}
+                    className="w-full pl-14 pr-6 py-4 text-lg bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white focus:outline-none focus:border-purple-400 focus:bg-white/20 transition-all appearance-none"
+                    required
+                    disabled={isLoading}
+                  >
+                    <option value="" className="bg-gray-800">How did you hear about us? *</option>
+                    {hearAboutUs.map(source => (
+                      <option key={source} value={source} className="bg-gray-800">{source}</option>
+                    ))}
+                  </select>
+                </div>
                 {/* Error Message */}
                 {error && (
                   <div className="bg-red-500/20 backdrop-blur-sm border border-red-400/30 rounded-2xl p-4">

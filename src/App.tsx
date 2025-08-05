@@ -4,6 +4,7 @@ import Features from './components/Features';
 import Stats from './components/Stats';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
+import CookieConsent from './components/CookieConsent';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Stats />
       <CTA />
       <Footer />
+      <CookieConsent />
     </div>
   );
 }
