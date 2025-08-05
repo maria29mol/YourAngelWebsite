@@ -3,10 +3,61 @@ import { ArrowRight, Mail, CheckCircle, Sparkles, User, Globe, Calendar, Heart, 
 import { supabase, type EarlyAccessUser } from '../lib/supabase';
 
 const countries = [
-  'United States', 'Canada', 'United Kingdom', 'Australia', 'Germany', 'France', 
-  'Spain', 'Italy', 'Netherlands', 'Sweden', 'Norway', 'Denmark', 'Finland',
-  'Japan', 'South Korea', 'Singapore', 'New Zealand', 'Ireland', 'Belgium',
-  'Switzerland', 'Austria', 'Portugal', 'Other'
+  // Major Powers & G7
+  'United States', 'China', 'Japan', 'Germany', 'United Kingdom', 'France', 'Italy', 'Canada',
+  
+  // Major Economies & G20
+  'India', 'Brazil', 'Russia', 'South Korea', 'Australia', 'Mexico', 'Indonesia', 'Turkey',
+  'Saudi Arabia', 'Argentina', 'South Africa', 'Spain', 'Netherlands', 'Switzerland',
+  
+  // European Union Countries
+  'Poland', 'Belgium', 'Ireland', 'Austria', 'Sweden', 'Norway', 'Denmark', 'Finland',
+  'Portugal', 'Greece', 'Czech Republic', 'Romania', 'Hungary', 'Bulgaria', 'Croatia',
+  'Slovakia', 'Slovenia', 'Lithuania', 'Latvia', 'Estonia', 'Luxembourg', 'Malta', 'Cyprus',
+  
+  // Major Asian Countries
+  'Thailand', 'Singapore', 'Malaysia', 'Philippines', 'Vietnam', 'Bangladesh', 'Pakistan',
+  'Sri Lanka', 'Myanmar', 'Cambodia', 'Laos', 'Nepal', 'Bhutan', 'Maldives',
+  
+  // Middle East & North Africa
+  'United Arab Emirates', 'Israel', 'Iran', 'Iraq', 'Egypt', 'Morocco', 'Algeria',
+  'Tunisia', 'Libya', 'Jordan', 'Lebanon', 'Syria', 'Yemen', 'Oman', 'Qatar',
+  'Bahrain', 'Kuwait', 'Afghanistan',
+  
+  // Sub-Saharan Africa
+  'Nigeria', 'Ethiopia', 'Kenya', 'Uganda', 'Tanzania', 'Ghana', 'Mozambique',
+  'Madagascar', 'Cameroon', 'Angola', 'Zambia', 'Zimbabwe', 'Botswana', 'Namibia',
+  'Malawi', 'Rwanda', 'Burundi', 'Democratic Republic of Congo', 'Republic of Congo',
+  'Gabon', 'Equatorial Guinea', 'Central African Republic', 'Chad', 'Sudan',
+  'South Sudan', 'Eritrea', 'Djibouti', 'Somalia', 'Senegal', 'Mali', 'Burkina Faso',
+  'Niger', 'Guinea', 'Sierra Leone', 'Liberia', 'Ivory Coast', 'Togo', 'Benin',
+  'Mauritania', 'Gambia', 'Guinea-Bissau', 'Cape Verde', 'Sao Tome and Principe',
+  'Comoros', 'Mauritius', 'Seychelles', 'Lesotho', 'Eswatini',
+  
+  // Latin America & Caribbean
+  'Colombia', 'Chile', 'Peru', 'Venezuela', 'Ecuador', 'Bolivia', 'Paraguay', 'Uruguay',
+  'Guyana', 'Suriname', 'French Guiana', 'Cuba', 'Dominican Republic', 'Haiti',
+  'Jamaica', 'Trinidad and Tobago', 'Barbados', 'Saint Lucia', 'Grenada',
+  'Saint Vincent and the Grenadines', 'Antigua and Barbuda', 'Dominica',
+  'Saint Kitts and Nevis', 'Bahamas', 'Belize', 'Costa Rica', 'Panama',
+  'Nicaragua', 'Honduras', 'El Salvador', 'Guatemala',
+  
+  // Central Asia & Caucasus
+  'Kazakhstan', 'Uzbekistan', 'Turkmenistan', 'Kyrgyzstan', 'Tajikistan',
+  'Georgia', 'Armenia', 'Azerbaijan',
+  
+  // Eastern Europe (Non-EU)
+  'Ukraine', 'Belarus', 'Moldova', 'Serbia', 'Bosnia and Herzegovina',
+  'Montenegro', 'North Macedonia', 'Albania', 'Kosovo',
+  
+  // Pacific Islands
+  'New Zealand', 'Papua New Guinea', 'Fiji', 'Solomon Islands', 'Vanuatu',
+  'Samoa', 'Tonga', 'Kiribati', 'Tuvalu', 'Nauru', 'Palau', 'Marshall Islands',
+  'Micronesia',
+  
+  // Other
+  'Mongolia', 'Iceland', 'Andorra', 'Monaco', 'Liechtenstein', 'San Marino',
+  'Vatican City', 'Other'
 ];
 
 const genders = [
