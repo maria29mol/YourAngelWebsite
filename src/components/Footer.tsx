@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Shield, Mail, Instagram, Linkedin } from 'lucide-react';
+import { Heart, Shield, Mail, Instagram, Linkedin, Music } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -34,6 +34,14 @@ export default function Footer() {
                 className="p-3 bg-white/5 rounded-full border border-white/10 hover:border-pink-400/50 hover:bg-pink-400/10 transition-all group"
               >
                 <Instagram className="w-5 h-5 text-gray-400 group-hover:text-pink-400" />
+              </a>
+              <a 
+                href="https://www.tiktok.com/@yourangel.ai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 bg-white/5 rounded-full border border-white/10 hover:border-purple-400/50 hover:bg-purple-400/10 transition-all group"
+              >
+                <Music className="w-5 h-5 text-gray-400 group-hover:text-purple-400" />
               </a>
               <a 
                 href="https://www.linkedin.com/company/yourangel-ai/" 
