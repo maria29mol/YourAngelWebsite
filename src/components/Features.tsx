@@ -65,7 +65,10 @@ export default function Features() {
                 <img 
                   src="/logo.png" 
                   alt="YourAngel Logo" 
-                 className="h-8 w-auto opacity-30"
+                 className="h-8 w-auto opacity-30 filter drop-shadow-lg"
+                 style={{
+                   filter: 'drop-shadow(0 0 10px rgba(139, 92, 246, 0.3))'
+                 }}
                 />
               </div>
               

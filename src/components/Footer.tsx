@@ -11,7 +11,10 @@ export default function Footer() {
               <img 
                 src="/logo.png" 
                 alt="YourAngel Logo" 
-               className="h-10 w-auto"
+               className="h-10 w-auto filter drop-shadow-lg"
+               style={{
+                 filter: 'drop-shadow(0 0 15px rgba(139, 92, 246, 0.5))'
+               }}
               />
               <span className="text-2xl font-bold text-white">YourAngel</span>
             </div>
