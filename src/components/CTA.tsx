@@ -39,10 +39,19 @@ export default function CTA() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: name === 'age' ? parseInt(value) || 0 : value
-    }));
+    if (name === 'age') {
+      // Only allow numbers for age field
+      const numericValue = value.replace(/[^0-9]/g, '');
+      setFormData(prev => ({
+        ...prev,
+        [name]: parseInt(numericValue) || 0
+      }));
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
     setError(''); // Clear error when user starts typing
   };
 
@@ -179,12 +188,10 @@ export default function CTA() {
                   <div className="relative">
                     <Calendar className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
                     <input
-                      type="number"
+                      type="text"
                       name="age"
-                      value={formData.age}
+                      value={formData.age || ''}
                       onChange={handleInputChange}
-                      min="1"
-                      max="150"
                       placeholder="Enter your age *"
                       className="w-full pl-14 pr-6 py-4 text-lg bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-300 focus:outline-none focus:border-purple-400 focus:bg-white/20 transition-all"
                       required
