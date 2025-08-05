@@ -41,7 +41,10 @@ export default function Hero() {
             <img 
               src="/logo.png" 
               alt="YourAngel Logo" 
-             className="h-20 w-auto"
+             className="h-20 w-auto filter drop-shadow-2xl"
+             style={{
+               filter: 'drop-shadow(0 0 20px rgba(139, 92, 246, 0.6)) drop-shadow(0 0 40px rgba(236, 72, 153, 0.4))'
+             }}
             />
           </div>
 
