@@ -135,7 +135,7 @@ export default function CTA() {
             <Sparkles className="w-16 h-16 text-yellow-400 mx-auto mb-6 animate-pulse" />
             <h2 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
               Be the First to Find Your
-              <span className="block bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 bg-clip-text text-transparent leading-relaxed py-2">
                 Light Path
               </span>
             </h2>
