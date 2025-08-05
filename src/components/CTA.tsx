@@ -1,37 +1,100 @@
 import React, { useState } from 'react';
-import { ArrowRight, Mail, CheckCircle, Sparkles } from 'lucide-react';
+import { ArrowRight, Mail, CheckCircle, Sparkles, User, Globe, Calendar } from 'lucide-react';
+import { supabase, type EarlyAccessUser } from '../lib/supabase';
+
+const countries = [
+  'United States', 'Canada', 'United Kingdom', 'Australia', 'Germany', 'France', 
+  'Spain', 'Italy', 'Netherlands', 'Sweden', 'Norway', 'Denmark', 'Finland',
+  'Japan', 'South Korea', 'Singapore', 'New Zealand', 'Ireland', 'Belgium',
+  'Switzerland', 'Austria', 'Portugal', 'Other'
+];
+
+const genders = [
+  'Female', 'Male', 'Non-binary', 'Prefer not to say', 'Other'
+];
+
+const painPoints = [
+  'Anxiety', 'Depression', 'Stress', 'Sleep issues', 'Academic pressure',
+  'Social anxiety', 'Body image', 'Family issues', 'Relationship problems',
+  'Identity questions', 'Bullying', 'Eating concerns', 'Other'
+];
 
 export default function CTA() {
-  const [email, setEmail] = useState('');
+  const [formData, setFormData] = useState<EarlyAccessUser>({
+    email: '',
+    country: '',
+    age: 16,
+    gender: '',
+    main_pain_point: ''
+  });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: name === 'age' ? parseInt(value) || 16 : value
+    }));
+    setError(''); // Clear error when user starts typing
+  };
+
+  const validateForm = () => {
+    if (!formData.email || !formData.country || !formData.gender) {
+      setError('Please fill in all required fields');
+      return false;
+    }
+    if (formData.age < 13 || formData.age > 19) {
+      setError('Age must be between 13 and 19');
+      return false;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setError('Please enter a valid email address');
+      return false;
+    }
+    return true;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
     setIsLoading(true);
+    setError('');
     
     try {
-      const response = await fetch('https://formspree.io/f/mjkoenad', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
+      const { error: supabaseError } = await supabase
+        .from('early_access_users')
+        .insert([formData]);
 
-      if (response.ok) {
-        setIsSubmitted(true);
-        setEmail('');
-        // Reset success message after 5 seconds
-        setTimeout(() => setIsSubmitted(false), 5000);
-      } else {
-        const data = await response.json();
-        alert('Error submitting form: ' + (data?.error || 'Unknown error'));
+      if (supabaseError) {
+        if (supabaseError.code === '23505') { // Unique constraint violation
+          setError('This email is already registered for early access');
+        } else {
+          setError('Failed to submit form. Please try again.');
+        }
+        return;
       }
+
+      setIsSubmitted(true);
+      setFormData({
+        email: '',
+        country: '',
+        age: 16,
+        gender: '',
+        main_pain_point: ''
+      });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000);
     } catch (error) {
       console.error('Network error:', error);
-      alert('Network error. Please try again.');
+      setError('Network error. Please check your connection and try again.');
     } finally {
       setIsLoading(false);
     }
@@ -69,27 +132,112 @@ export default function CTA() {
 
           {!isSubmitted ? (
             <form onSubmit={handleSubmit} className="mb-12">
-              <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
-                <div className="flex-1 relative">
+              <div className="max-w-2xl mx-auto space-y-6">
+                {/* Email */}
+                <div className="relative">
                   <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
                   <input
                     type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email for early access"
-                    className="w-full pl-14 pr-6 py-6 text-lg bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-300 focus:outline-none focus:border-purple-400 focus:bg-white/20 transition-all"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="Enter your email address *"
+                    className="w-full pl-14 pr-6 py-4 text-lg bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-300 focus:outline-none focus:border-purple-400 focus:bg-white/20 transition-all"
                     required
                     disabled={isLoading}
                   />
                 </div>
+
+                {/* Country and Age Row */}
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="relative">
+                    <Globe className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
+                    <select
+                      name="country"
+                      value={formData.country}
+                      onChange={handleInputChange}
+                      className="w-full pl-14 pr-6 py-4 text-lg bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white focus:outline-none focus:border-purple-400 focus:bg-white/20 transition-all appearance-none"
+                      required
+                      disabled={isLoading}
+                    >
+                      <option value="" className="bg-gray-800">Select your country *</option>
+                      {countries.map(country => (
+                        <option key={country} value={country} className="bg-gray-800">{country}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="relative">
+                    <Calendar className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
+                    <input
+                      type="number"
+                      name="age"
+                      value={formData.age}
+                      onChange={handleInputChange}
+                      min="13"
+                      max="19"
+                      placeholder="Age *"
+                      className="w-full pl-14 pr-6 py-4 text-lg bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-300 focus:outline-none focus:border-purple-400 focus:bg-white/20 transition-all"
+                      required
+                      disabled={isLoading}
+                    />
+                  </div>
+                </div>
+
+                {/* Gender */}
+                <div className="relative">
+                  <User className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
+                  <select
+                    name="gender"
+                    value={formData.gender}
+                    onChange={handleInputChange}
+                    className="w-full pl-14 pr-6 py-4 text-lg bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white focus:outline-none focus:border-purple-400 focus:bg-white/20 transition-all appearance-none"
+                    required
+                    disabled={isLoading}
+                  >
+                    <option value="" className="bg-gray-800">Select your gender *</option>
+                    {genders.map(gender => (
+                      <option key={gender} value={gender} className="bg-gray-800">{gender}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Main Pain Point (Optional) */}
+                <div className="relative">
+                  <select
+                    name="main_pain_point"
+                    value={formData.main_pain_point}
+                    onChange={handleInputChange}
+                    className="w-full pl-6 pr-6 py-4 text-lg bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white focus:outline-none focus:border-purple-400 focus:bg-white/20 transition-all appearance-none"
+                    disabled={isLoading}
+                  >
+                    <option value="" className="bg-gray-800">What's your main concern? (Optional)</option>
+                    {painPoints.map(point => (
+                      <option key={point} value={point} className="bg-gray-800">{point}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Error Message */}
+                {error && (
+                  <div className="bg-red-500/20 backdrop-blur-sm border border-red-400/30 rounded-2xl p-4">
+                    <p className="text-red-200 text-center">{error}</p>
+                  </div>
+                )}
+
+                {/* Submit Button */}
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="group bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold py-6 px-12 rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group w-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold py-6 px-12 rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {isLoading ? 'Submitting...' : 'Get Early Access'}
                   {!isLoading && <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />}
                 </button>
+
+                <p className="text-gray-400 text-sm text-center">
+                  * Required fields. We respect your privacy and will never share your data.
+                </p>
               </div>
             </form>
           ) : (
@@ -97,7 +245,7 @@ export default function CTA() {
               <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-white mb-2">You're on the list! 🎉</h3>
               <p className="text-green-200">
-                We'll notify you as soon as YourAngel is ready. Check your email for confirmation.
+                Thank you for joining our early access program. We'll notify you as soon as YourAngel is ready!
               </p>
             </div>
           )}
