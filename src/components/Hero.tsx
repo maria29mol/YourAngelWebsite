@@ -1,6 +1,13 @@
 import React from 'react';
 import { ArrowRight, Sparkles, Shield, Heart } from 'lucide-react';
 
+const scrollToEarlyAccess = () => {
+  const element = document.getElementById('early-access');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 overflow-hidden">
@@ -75,7 +82,7 @@ export default function Hero() {
           </div>
 
           {/* CTA Button */}
-<div className="mb-12">
+          <div className="mb-12">
             <button
               onClick={scrollToEarlyAccess}
               className="group relative inline-flex items-center justify-center px-12 py-6 text-xl font-bold text-white bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-full hover:scale-105 transform transition-all duration-300 shadow-2xl hover:shadow-purple-500/50"
@@ -86,8 +93,6 @@ export default function Hero() {
             </button>
             <p className="text-gray-400 mt-4 text-sm">Be among the first to get early access</p>
           </div>
-            
-            <p className="text-gray-400 mt-4 text-sm">Be among the first to get early access</p>
 
           {/* Crisis message */}
           <div className="bg-red-500/20 backdrop-blur-sm border border-red-400/30 rounded-2xl p-6 max-w-2xl mx-auto">

@@ -81,7 +81,15 @@ export default function Stats() {
             <p className="text-xl text-gray-200 mb-8">
               YourAngel isn't just an app - it's a movement to ensure no teen suffers in silence.
             </p>
-            <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-4 px-12 rounded-full hover:scale-105 transition-transform duration-300 shadow-2xl">
+            <button 
+              onClick={() => {
+                const element = document.getElementById('early-access');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-4 px-12 rounded-full hover:scale-105 transition-transform duration-300 shadow-2xl"
+            >
               Join the Movement
             </button>
           </div>

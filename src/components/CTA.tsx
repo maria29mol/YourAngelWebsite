@@ -4,43 +4,44 @@ import { ArrowRight, Mail, CheckCircle, Sparkles } from 'lucide-react';
 export default function CTA() {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     
-    console.log('Submitting email:', email);
-    
-    // Send email to Formspree
-fetch('https://formspree.io/f/mjkoenad', {
-  method: 'POST',
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({ email }),
-})
-  .then(async (response) => {
-    const data = await response.json();
-    console.log('Response status:', response.status);
-    console.log('Response data:', data);
+    try {
+      const response = await fetch('https://formspree.io/f/mjkoenad', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
 
-    if (response.ok) {
-      setIsSubmitted(true);
-    } else {
-      alert('Formspree error: ' + (data?.error || 'Unknown error'));
+      if (response.ok) {
+        setIsSubmitted(true);
+        setEmail('');
+        // Reset success message after 5 seconds
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        const data = await response.json();
+        alert('Error submitting form: ' + (data?.error || 'Unknown error'));
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+      alert('Network error. Please try again.');
+    } finally {
+      setIsLoading(false);
     }
-  })
-  .catch((error) => {
-    console.error('Network error:', error);
-    alert('Network error — see console.');
-  });
   };
 
   return (
     <section
-  id="early-access"
-  className="py-24 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden"
->
+      id="early-access"
+      className="py-24 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden"
+    >
       {/* Animated background */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -78,14 +79,16 @@ fetch('https://formspree.io/f/mjkoenad', {
                     placeholder="Enter your email for early access"
                     className="w-full pl-14 pr-6 py-6 text-lg bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-300 focus:outline-none focus:border-purple-400 focus:bg-white/20 transition-all"
                     required
+                    disabled={isLoading}
                   />
                 </div>
                 <button
                   type="submit"
-                  className="group bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold py-6 px-12 rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center"
+                  disabled={isLoading}
+                  className="group bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold py-6 px-12 rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Get Early Access
-                  <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  {isLoading ? 'Submitting...' : 'Get Early Access'}
+                  {!isLoading && <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />}
                 </button>
               </div>
             </form>
