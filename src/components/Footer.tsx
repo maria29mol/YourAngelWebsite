@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Shield, Mail } from 'lucide-react';
+import { Heart, Shield, Mail, Instagram, Linkedin, Twitter } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -19,9 +19,35 @@ export default function Footer() {
               Reshaping global mental healthcare for teenagers. 
               Safe, accessible, and always available when you need support most.
             </p>
-            <div className="flex items-center gap-2 text-gray-400">
+            <div className="flex items-center gap-2 text-gray-400 mb-6">
               <Heart className="w-5 h-5 text-red-400" />
               <span>Made with love for teens, by teens</span>
+            </div>
+            <div className="flex gap-4">
+              <a 
+                href="https://instagram.com/yourangel.ai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 bg-white/5 rounded-full border border-white/10 hover:border-pink-400/50 hover:bg-pink-400/10 transition-all group"
+              >
+                <Instagram className="w-5 h-5 text-gray-400 group-hover:text-pink-400" />
+              </a>
+              <a 
+                href="https://linkedin.com/company/yourangel" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 bg-white/5 rounded-full border border-white/10 hover:border-blue-400/50 hover:bg-blue-400/10 transition-all group"
+              >
+                <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-blue-400" />
+              </a>
+              <a 
+                href="https://twitter.com/yourangel_ai" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 bg-white/5 rounded-full border border-white/10 hover:border-blue-400/50 hover:bg-blue-400/10 transition-all group"
+              >
+                <Twitter className="w-5 h-5 text-gray-400 group-hover:text-blue-400" />
+              </a>
             </div>
           </div>
 

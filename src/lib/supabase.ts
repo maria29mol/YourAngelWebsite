@@ -17,6 +17,7 @@ export type EarlyAccessUser = {
   gender: string;
   main_pain_point: string;
   how_did_you_hear: string;
+  how_did_you_hear: string;
   created_at?: string;
   updated_at?: string;
 };

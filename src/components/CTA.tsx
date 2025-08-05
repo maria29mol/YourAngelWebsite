@@ -52,7 +52,8 @@ export default function CTA() {
       return false;
     }
     if (formData.age < 13 || formData.age > 19) {
-      setError('Age must be between 13 and 19');
+    if (formData.age < 1 || formData.age > 120) {
+      setError('Please enter a valid age');
       return false;
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -181,9 +182,9 @@ export default function CTA() {
                       name="age"
                       value={formData.age}
                       onChange={handleInputChange}
-                      min="13"
-                      max="19"
-                      placeholder="Enter your age (13-19) *"
+                      min="1"
+                      max="120"
+                      placeholder="Enter your age *"
                       className="w-full pl-14 pr-6 py-4 text-lg bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-300 focus:outline-none focus:border-purple-400 focus:bg-white/20 transition-all"
                       required
                       disabled={isLoading}
