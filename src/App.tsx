@@ -32,15 +32,6 @@ function App() {
         <Route path="/ai-expert" element={<AIExpert />} />
         <Route path="/teen-focused" element={<TeenFocused />} />
       </Routes>
-            <CTA />
-            <Footer />
-            <CookieConsent />
-          </>
-        } />
-        <Route path="/safe-secure" element={<SafeSecure />} />
-        <Route path="/ai-expert" element={<AIExpert />} />
-        <Route path="/teen-focused" element={<TeenFocused />} />
-      </Routes>
     </div>
   );
 }
