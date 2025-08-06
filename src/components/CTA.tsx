@@ -322,7 +322,7 @@ export default function CTA() {
                 </button>
 
                 <p className="text-gray-400 text-sm text-center">
-                  * Required fields. We respect your privacy and will never share your data.
+                  * Required fields. <strong className="text-white">We will NOT under ANY circumstance share your data.</strong>
                 </p>
               </div>
             </form>

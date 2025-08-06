@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Shield, Heart } from 'lucide-react';
 
 const scrollToEarlyAccess = () => {
@@ -70,17 +71,34 @@ export default function Hero() {
 
           {/* Key features badges */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
+            <Link 
+              to="/safe-secure"
+              className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-green-400/50 transition-all cursor-pointer group"
+            >
               <Shield className="w-5 h-5 text-green-400 mr-2" />
-              <span className="text-white font-medium">Safe & Secure</span>
-            </div>
-            <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
+              <span className="text-white font-medium group-hover:text-green-400 transition-colors">Safe & Secure</span>
+            </Link>
+            <Link 
+              to="/ai-expert"
+              className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-purple-400/50 transition-all cursor-pointer group"
+            >
               <Sparkles className="w-5 h-5 text-purple-400 mr-2" />
-              <span className="text-white font-medium">AI Expert</span>
-            </div>
-            <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
+              <span className="text-white font-medium group-hover:text-purple-400 transition-colors">AI Expert</span>
+            </Link>
+            <Link 
+              to="/teen-focused"
+              className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-pink-400/50 transition-all cursor-pointer group"
+            >
               <Heart className="w-5 h-5 text-pink-400 mr-2" />
-              <span className="text-white font-medium">Teen-Focused</span>
+              <span className="text-white font-medium group-hover:text-pink-400 transition-colors">Teen-Focused</span>
+            </Link>
+          </div>
+
+          {/* Privacy Assurance Badge */}
+          <div className="mb-8">
+            <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
+              <Shield className="w-5 h-5 text-blue-400 mr-2" />
+              <span className="text-white font-medium">Your data will NOT be shared under ANY circumstance</span>
             </div>
           </div>
 
