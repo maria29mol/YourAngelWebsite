@@ -42,7 +42,10 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-900 to-black">
+    <section id="features" className="py-24 bg-gradient-to-b from-gray-900 via-gray-900 to-black relative">
+      {/* Smooth transition overlay from hero */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-indigo-900/30 to-transparent pointer-events-none"></div>
+      
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl font-black text-white mb-6">
@@ -85,6 +88,9 @@ export default function Features() {
           ))}
         </div>
       </div>
+      
+      {/* Transition to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
     </section>
   );
 }

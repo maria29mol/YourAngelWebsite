@@ -30,7 +30,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="py-24 bg-black relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-black via-black to-purple-900/20 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -95,6 +95,9 @@ export default function Stats() {
           </div>
         </div>
       </div>
+      
+      {/* Smooth transition to CTA section */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-purple-900/40 pointer-events-none"></div>
     </section>
   );
 }

@@ -49,6 +49,7 @@ body {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
 }
 
 /* Custom scrollbar */
@@ -149,5 +150,21 @@ img[src=""] {
   .transition-transform,
   .transition-colors {
     transition: none;
+  }
+}
+
+/* Smooth section transitions */
+section {
+  position: relative;
+}
+
+/* Enhanced scroll snap for smoother navigation */
+@media (min-width: 768px) {
+  body {
+    scroll-snap-type: y proximity;
+  }
+  
+  section {
+    scroll-snap-align: start;
   }
 }

@@ -117,11 +117,19 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer" onClick={() => {
+        const featuresSection = document.querySelector('#features');
+        if (featuresSection) {
+          featuresSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }}>
         <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
+
+      {/* Gradient transition overlay */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-900/50 to-transparent pointer-events-none"></div>
     </section>
   );
 }
