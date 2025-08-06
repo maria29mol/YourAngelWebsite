@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Shield, Heart } from 'lucide-react';
 
 const scrollToEarlyAccess = () => {
@@ -96,22 +97,39 @@ export default function Hero() {
 
           {/* Privacy Assurance Badge */}
           <div className="mb-8">
-            <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
+            <Link 
+              to="/safe-secure"
+              className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-green-400/50 transition-all cursor-pointer group"
+            >
               <Shield className="w-5 h-5 text-blue-400 mr-2" />
-              <span className="text-white font-medium">Your data will NOT be shared under ANY circumstance</span>
-            </div>
-          </div>
+              <span className="text-white font-medium group-hover:text-green-400 transition-colors">Safe & Secure</span>
+            </Link>
+            <Link 
+              to="/ai-expert"
+              className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-purple-400/50 transition-all cursor-pointer group"
+            >
 
           {/* CTA Button */}
           <div className="mb-12">
             <button
               onClick={scrollToEarlyAccess}
               className="group relative inline-flex items-center justify-center px-12 py-6 text-xl font-bold text-white bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-full hover:scale-105 transform transition-all duration-300 shadow-2xl hover:shadow-purple-500/50"
+              <span className="text-white font-medium group-hover:text-purple-400 transition-colors">AI Expert</span>
+            </Link>
+            <Link 
+              to="/teen-focused"
+              className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-pink-400/50 transition-all cursor-pointer group"
             >
-              <span className="relative z-10">Get Early Access</span>
+              <Heart className="w-5 h-5 text-pink-400 mr-2" />
+              <span className="text-white font-medium group-hover:text-pink-400 transition-colors">Teen-Focused</span>
+            </Link>
+          </div>
+
+          {/* Privacy Assurance Badge */}
+          <div className="mb-8">
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </button>
+              <Shield className="w-5 h-5 text-blue-400 mr-2" />
+              <span className="text-white font-medium">Your data will NOT be shared under ANY circumstance</span>
             <p className="text-gray-400 mt-4 text-sm">Be among the first to get early access</p>
           </div>
         </div>
