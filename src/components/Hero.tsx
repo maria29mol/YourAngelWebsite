@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Shield, Heart } from 'lucide-react';
 
 const scrollToEarlyAccess = () => {
