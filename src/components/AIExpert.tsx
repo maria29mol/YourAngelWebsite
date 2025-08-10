@@ -41,7 +41,7 @@ export default function AIExpert() {
 
           {/* AI Capabilities */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
+            <div className="glitter-container magic-glow animate-float-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-purple-400/30">
               <span className="text-5xl text-purple-400 mb-6 block">🧠</span>
               <h3 className="text-2xl font-bold text-white mb-4">Teen-Specialized Training</h3>
               <p className="text-gray-300 leading-relaxed">
@@ -49,7 +49,7 @@ export default function AIExpert() {
               </p>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
+            <div className="glitter-container magic-glow animate-float-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-purple-400/30" style={{animationDelay: '0.5s'}}>
               <span className="text-5xl text-purple-400 mb-6 block">📖</span>
               <h3 className="text-2xl font-bold text-white mb-4">Evidence-Based Approaches</h3>
               <p className="text-gray-300 leading-relaxed">
@@ -57,7 +57,7 @@ export default function AIExpert() {
               </p>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
+            <div className="glitter-container magic-glow animate-float-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-purple-400/30" style={{animationDelay: '1s'}}>
               <span className="text-5xl text-purple-400 mb-6 block">🎯</span>
               <h3 className="text-2xl font-bold text-white mb-4">Personalized Support</h3>
               <p className="text-gray-300 leading-relaxed">
@@ -65,7 +65,7 @@ export default function AIExpert() {
               </p>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
+            <div className="glitter-container magic-glow animate-float-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-purple-400/30" style={{animationDelay: '1.5s'}}>
               <span className="text-5xl text-purple-400 mb-6 block">⚡</span>
               <h3 className="text-2xl font-bold text-white mb-4">Instant Response</h3>
               <p className="text-gray-300 leading-relaxed">
