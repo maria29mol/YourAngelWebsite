@@ -61,7 +61,7 @@ export default function SafeSecure() {
               <span className="text-5xl text-green-400 mb-6 block">🖥️</span>
               <h3 className="text-2xl font-bold text-white mb-4">Secure Infrastructure</h3>
               <p className="text-gray-300 leading-relaxed">
-                Our servers are hosted in secure, HIPAA-compliant data centers with 24/7 monitoring and protection.
+                Our infrastructure is built with security as a top priority, using industry-standard protection measures.
               </p>
             </div>
 

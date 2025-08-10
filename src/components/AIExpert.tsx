@@ -45,7 +45,7 @@ export default function AIExpert() {
               <span className="text-5xl text-purple-400 mb-6 block">🧠</span>
               <h3 className="text-2xl font-bold text-white mb-4">Teen-Specialized Training</h3>
               <p className="text-gray-300 leading-relaxed">
-                Our AI is trained on thousands of hours of teen-specific mental health data, understanding the unique challenges you face.
+                Our AI is specially trained to understand teen-specific mental health challenges and the unique experiences you face.
               </p>
             </div>
 
