@@ -53,7 +53,7 @@ export default function AIExpert() {
               <span className="text-5xl text-purple-400 mb-6 block">📖</span>
               <h3 className="text-2xl font-bold text-white mb-4">Evidence-Based Approaches</h3>
               <p className="text-gray-300 leading-relaxed">
-                Incorporates proven therapeutic methods like CBT, DBT, and mindfulness techniques tailored for teenagers.
+                Incorporates proven therapeutic approaches and wellness techniques tailored for teenagers.
               </p>
             </div>
 

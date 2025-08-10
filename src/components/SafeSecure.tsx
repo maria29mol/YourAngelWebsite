@@ -45,7 +45,7 @@ export default function SafeSecure() {
               <span className="text-5xl text-green-400 mb-6 block">🔒</span>
               <h3 className="text-2xl font-bold text-white mb-4">End-to-End Encryption</h3>
               <p className="text-gray-300 leading-relaxed">
-                All your conversations are encrypted with military-grade security. Even we can't read your messages - only you have the key.
+                All your conversations are encrypted with strong security measures. Even we can't read your messages - only you have the key.
               </p>
             </div>
 
