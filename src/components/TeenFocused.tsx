@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Heart, Users, MessageCircle, Lightbulb, Shield, Star } from 'lucide-react';
 
 export default function TeenFocused() {
   return (
@@ -11,7 +10,7 @@ export default function TeenFocused() {
           to="/"
           className="inline-flex items-center text-white hover:text-pink-400 transition-colors group"
         >
-          <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
+          <span className="mr-2 text-xl group-hover:-translate-x-1 transition-transform">←</span>
           Back to Home
         </Link>
       </header>
@@ -22,7 +21,7 @@ export default function TeenFocused() {
           {/* Hero Section */}
           <div className="text-center mb-16">
             <div className="inline-flex p-6 bg-pink-500/20 rounded-full mb-8">
-              <Heart className="w-16 h-16 text-pink-400" />
+              <span className="text-6xl text-pink-400">💖</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
               Teen
@@ -43,7 +42,7 @@ export default function TeenFocused() {
           {/* Why Teen-Focused Matters */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
-              <MessageCircle className="w-12 h-12 text-pink-400 mb-6" />
+              <span className="text-5xl text-pink-400 mb-6 block">💬</span>
               <h3 className="text-2xl font-bold text-white mb-4">Speaks Your Language</h3>
               <p className="text-gray-300 leading-relaxed">
                 No clinical jargon or adult-centric advice. We communicate in a way that feels natural and relatable to you.
@@ -51,7 +50,7 @@ export default function TeenFocused() {
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
-              <Users className="w-12 h-12 text-pink-400 mb-6" />
+              <span className="text-5xl text-pink-400 mb-6 block">👥</span>
               <h3 className="text-2xl font-bold text-white mb-4">Understands Teen Issues</h3>
               <p className="text-gray-300 leading-relaxed">
                 From academic pressure to social anxiety, body image to identity questions - we get what you're going through.
@@ -59,7 +58,7 @@ export default function TeenFocused() {
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
-              <Lightbulb className="w-12 h-12 text-pink-400 mb-6" />
+              <span className="text-5xl text-pink-400 mb-6 block">💡</span>
               <h3 className="text-2xl font-bold text-white mb-4">Age-Appropriate Solutions</h3>
               <p className="text-gray-300 leading-relaxed">
                 Strategies and coping mechanisms designed specifically for teenage brains and teenage lives.
@@ -67,7 +66,7 @@ export default function TeenFocused() {
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
-              <Shield className="w-12 h-12 text-pink-400 mb-6" />
+              <span className="text-5xl text-pink-400 mb-6 block">🛡️</span>
               <h3 className="text-2xl font-bold text-white mb-4">Safe Space</h3>
               <p className="text-gray-300 leading-relaxed">
                 A judgment-free environment where you can be completely honest about your feelings and experiences.
@@ -80,35 +79,35 @@ export default function TeenFocused() {
             <h2 className="text-3xl font-bold text-white mb-8 text-center">Designed for Your Generation</h2>
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <Star className="w-6 h-6 text-pink-400 flex-shrink-0" />
+                <span className="text-2xl text-pink-400 flex-shrink-0">⭐</span>
                 <div>
                   <h4 className="text-xl font-bold text-white mb-1">Social Media Awareness</h4>
                   <p className="text-pink-200">Understands the impact of social media on mental health and provides relevant guidance.</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <Star className="w-6 h-6 text-pink-400 flex-shrink-0" />
+                <span className="text-2xl text-pink-400 flex-shrink-0">⭐</span>
                 <div>
                   <h4 className="text-xl font-bold text-white mb-1">Academic Pressure Support</h4>
                   <p className="text-pink-200">Specialized help for school stress, exam anxiety, and college preparation worries.</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <Star className="w-6 h-6 text-pink-400 flex-shrink-0" />
+                <span className="text-2xl text-pink-400 flex-shrink-0">⭐</span>
                 <div>
                   <h4 className="text-xl font-bold text-white mb-1">Identity & Self-Discovery</h4>
                   <p className="text-pink-200">Support for questions about identity, sexuality, relationships, and finding your place in the world.</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <Star className="w-6 h-6 text-pink-400 flex-shrink-0" />
+                <span className="text-2xl text-pink-400 flex-shrink-0">⭐</span>
                 <div>
                   <h4 className="text-xl font-bold text-white mb-1">Family & Peer Relationships</h4>
                   <p className="text-pink-200">Navigate complex relationships with parents, friends, and romantic interests.</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <Star className="w-6 h-6 text-pink-400 flex-shrink-0" />
+                <span className="text-2xl text-pink-400 flex-shrink-0">⭐</span>
                 <div>
                   <h4 className="text-xl font-bold text-white mb-1">Future Anxiety</h4>
                   <p className="text-pink-200">Help with worries about the future, career choices, and life after high school.</p>
@@ -149,7 +148,7 @@ export default function TeenFocused() {
               className="inline-flex items-center bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold py-4 px-8 rounded-full hover:scale-105 transition-transform"
             >
               Join Our Teen Community
-              <ArrowLeft className="ml-2 w-5 h-5 rotate-180" />
+              <span className="ml-2 text-xl">→</span>
             </Link>
           </div>
         </div>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Cookie, X, Check } from 'lucide-react';
 
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
@@ -30,7 +29,7 @@ export default function CookieConsent() {
         <div className="p-6">
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0">
-              <Cookie className="w-8 h-8 text-purple-600" />
+              <span className="text-3xl text-purple-600">🍪</span>
             </div>
             <div className="flex-1">
               <h3 className="text-lg font-bold text-gray-900 mb-2">
@@ -45,14 +44,14 @@ export default function CookieConsent() {
                   onClick={handleAccept}
                   className="flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold px-6 py-3 rounded-xl hover:scale-105 transition-transform"
                 >
-                  <Check className="w-4 h-4" />
+                  <span>✅</span>
                   Accept Cookies
                 </button>
                 <button
                   onClick={handleDecline}
                   className="flex items-center justify-center gap-2 bg-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-xl hover:bg-gray-300 transition-colors"
                 >
-                  <X className="w-4 h-4" />
+                  <span>❌</span>
                   Decline
                 </button>
               </div>
