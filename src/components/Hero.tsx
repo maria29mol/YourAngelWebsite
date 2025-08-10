@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Shield, Heart } from 'lucide-react';
 
 const scrollToEarlyAccess = () => {
   const element = document.getElementById('early-access');
@@ -75,21 +74,21 @@ export default function Hero() {
               to="/safe-secure"
               className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-green-400/50 hover:shadow-lg hover:shadow-green-400/30 hover:scale-105 transition-all duration-300 cursor-pointer group animate-pulse hover:animate-none"
             >
-              <Shield className="w-5 h-5 text-green-400 mr-2" />
+              <span className="text-green-400 mr-2">🛡️</span>
               <span className="text-white font-medium group-hover:text-green-400 transition-colors">Safe & Secure</span>
             </Link>
             <Link 
               to="/ai-expert"
               className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-purple-400/50 hover:shadow-lg hover:shadow-purple-400/30 hover:scale-105 transition-all duration-300 cursor-pointer group animate-pulse hover:animate-none"
             >
-              <Sparkles className="w-5 h-5 text-purple-400 mr-2" />
+              <span className="text-purple-400 mr-2">✨</span>
               <span className="text-white font-medium group-hover:text-purple-400 transition-colors">AI Expert</span>
             </Link>
             <Link 
               to="/teen-focused"
               className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-pink-400/50 hover:shadow-lg hover:shadow-pink-400/30 hover:scale-105 transition-all duration-300 cursor-pointer group animate-pulse hover:animate-none"
             >
-              <Heart className="w-5 h-5 text-pink-400 mr-2" />
+              <span className="text-pink-400 mr-2">💖</span>
               <span className="text-white font-medium group-hover:text-pink-400 transition-colors">Teen-Focused</span>
             </Link>
           </div>
@@ -97,7 +96,7 @@ export default function Hero() {
           {/* Privacy Assurance Badge */}
           <div className="mb-8">
             <div className="flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
-              <Shield className="w-5 h-5 text-blue-400 mr-2" />
+              <span className="text-blue-400 mr-2">🔒</span>
               <span className="text-white font-medium">Your data will NOT be shared under ANY circumstance</span>
             </div>
           </div>
@@ -109,7 +108,7 @@ export default function Hero() {
               className="group relative inline-flex items-center justify-center px-12 py-6 text-xl font-bold text-white bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-full hover:scale-105 transform transition-all duration-300 shadow-2xl hover:shadow-purple-500/50"
             >
               Get Early Access
-              <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              <span className="ml-3 text-2xl group-hover:translate-x-1 transition-transform">→</span>
             </button>
             <p className="text-gray-400 mt-4 text-sm">Be among the first to get early access</p>
           </div>

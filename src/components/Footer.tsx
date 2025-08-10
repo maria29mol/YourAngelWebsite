@@ -1,5 +1,4 @@
 import React from 'react';
-import { Heart, Shield, Mail, Instagram, Linkedin, Music } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -23,7 +22,7 @@ export default function Footer() {
               Safe, accessible, and always available when you need support most.
             </p>
             <div className="flex items-center gap-2 text-gray-400 mb-6">
-              <Heart className="w-5 h-5 text-red-400" />
+              <span className="text-red-400">💖</span>
               <span>Made with love for teens, by teens</span>
             </div>
             <div className="flex gap-4">
@@ -33,7 +32,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="p-3 bg-white/5 rounded-full border border-white/10 hover:border-pink-400/50 hover:bg-pink-400/10 transition-all group"
               >
-                <Instagram className="w-5 h-5 text-gray-400 group-hover:text-pink-400" />
+                <span className="text-xl text-gray-400 group-hover:text-pink-400">📷</span>
               </a>
               <a 
                 href="https://www.tiktok.com/@yourangel.ai" 
@@ -41,7 +40,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="p-3 bg-white/5 rounded-full border border-white/10 hover:border-purple-400/50 hover:bg-purple-400/10 transition-all group"
               >
-                <Music className="w-5 h-5 text-gray-400 group-hover:text-purple-400" />
+                <span className="text-xl text-gray-400 group-hover:text-purple-400">🎵</span>
               </a>
               <a 
                 href="https://www.linkedin.com/company/yourangel-ai/" 
@@ -49,7 +48,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="p-3 bg-white/5 rounded-full border border-white/10 hover:border-blue-400/50 hover:bg-blue-400/10 transition-all group"
               >
-                <Linkedin className="w-5 h-5 text-gray-400 group-hover:text-blue-400" />
+                <span className="text-xl text-gray-400 group-hover:text-blue-400">💼</span>
               </a>
             </div>
           </div>
@@ -67,7 +66,7 @@ export default function Footer() {
             <h3 className="text-white font-bold mb-4">Contact</h3>
             <ul className="space-y-3 text-gray-300">
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
+                <span>📧</span>
                 <span>yourangelbuisness@gmail.com</span>
               </li>
             </ul>

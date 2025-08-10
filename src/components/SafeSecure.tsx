@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Shield, Lock, Eye, Server, UserCheck, FileText } from 'lucide-react';
 
 export default function SafeSecure() {
   return (
@@ -11,7 +10,7 @@ export default function SafeSecure() {
           to="/"
           className="inline-flex items-center text-white hover:text-green-400 transition-colors group"
         >
-          <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
+          <span className="mr-2 text-xl group-hover:-translate-x-1 transition-transform">←</span>
           Back to Home
         </Link>
       </header>
@@ -22,7 +21,7 @@ export default function SafeSecure() {
           {/* Hero Section */}
           <div className="text-center mb-16">
             <div className="inline-flex p-6 bg-green-500/20 rounded-full mb-8">
-              <Shield className="w-16 h-16 text-green-400" />
+              <span className="text-6xl text-green-400">🛡️</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
               Safe & 
@@ -43,7 +42,7 @@ export default function SafeSecure() {
           {/* Security Features */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
-              <Lock className="w-12 h-12 text-green-400 mb-6" />
+              <span className="text-5xl text-green-400 mb-6 block">🔒</span>
               <h3 className="text-2xl font-bold text-white mb-4">End-to-End Encryption</h3>
               <p className="text-gray-300 leading-relaxed">
                 All your conversations are encrypted with military-grade security. Even we can't read your messages - only you have the key.
@@ -51,7 +50,7 @@ export default function SafeSecure() {
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
-              <Eye className="w-12 h-12 text-green-400 mb-6" />
+              <span className="text-5xl text-green-400 mb-6 block">👁️</span>
               <h3 className="text-2xl font-bold text-white mb-4">Zero Data Collection</h3>
               <p className="text-gray-300 leading-relaxed">
                 We don't track, store, or analyze your personal conversations. Your mental health journey stays completely private.
@@ -59,7 +58,7 @@ export default function SafeSecure() {
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
-              <Server className="w-12 h-12 text-green-400 mb-6" />
+              <span className="text-5xl text-green-400 mb-6 block">🖥️</span>
               <h3 className="text-2xl font-bold text-white mb-4">Secure Infrastructure</h3>
               <p className="text-gray-300 leading-relaxed">
                 Our servers are hosted in secure, HIPAA-compliant data centers with 24/7 monitoring and protection.
@@ -67,7 +66,7 @@ export default function SafeSecure() {
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
-              <UserCheck className="w-12 h-12 text-green-400 mb-6" />
+              <span className="text-5xl text-green-400 mb-6 block">✅</span>
               <h3 className="text-2xl font-bold text-white mb-4">Anonymous by Design</h3>
               <p className="text-gray-300 leading-relaxed">
                 You can use YourAngel completely anonymously. No real names, no personal identifiers required.
@@ -77,7 +76,7 @@ export default function SafeSecure() {
 
           {/* Privacy Promise */}
           <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-400/30 rounded-3xl p-12 text-center">
-            <FileText className="w-16 h-16 text-green-400 mx-auto mb-6" />
+            <div className="text-6xl text-green-400 mx-auto mb-6">📄</div>
             <h2 className="text-3xl font-bold text-white mb-6">Our Privacy Promise</h2>
             <div className="space-y-4 text-lg text-green-200 max-w-2xl mx-auto">
               <p>✅ We will NEVER sell your data to third parties</p>
@@ -92,7 +91,7 @@ export default function SafeSecure() {
                 className="inline-flex items-center bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold py-4 px-8 rounded-full hover:scale-105 transition-transform"
               >
                 Get Early Access
-                <ArrowLeft className="ml-2 w-5 h-5 rotate-180" />
+                <span className="ml-2 text-xl">→</span>
               </Link>
             </div>
           </div>

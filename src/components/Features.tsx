@@ -1,39 +1,38 @@
 import React from 'react';
-import { MessageCircle, Mic, Brain, Clock, Users, Zap } from 'lucide-react';
 
 const features = [
   {
-    icon: MessageCircle,
+    icon: "💬",
     title: "Text & Voice Support",
     description: "Chat or talk - whatever feels comfortable. Our AI adapts to your preferred communication style.",
     color: "from-blue-400 to-cyan-400"
   },
   {
-    icon: Brain,
+    icon: "🧠",
     title: "AI Mental Health Expert",
     description: "Trained on teen-specific mental health data with evidence-based therapeutic approaches.",
     color: "from-purple-400 to-pink-400"
   },
   {
-    icon: Clock,
+    icon: "🕐",
     title: "24/7 Availability",
     description: "Crisis doesn't wait for business hours. Neither do we. Always here when you need support.",
     color: "from-green-400 to-emerald-400"
   },
   {
-    icon: Zap,
+    icon: "⚡",
     title: "2-Click Access",
     description: "Open app, tap help. That's it. No lengthy forms or waiting rooms when you're in crisis.",
     color: "from-yellow-400 to-orange-400"
   },
   {
-    icon: Users,
+    icon: "👥",
     title: "Teen-Focused",
     description: "Built by teens, for teens. We understand your world, your language, and your struggles.",
     color: "from-indigo-400 to-purple-400"
   },
   {
-    icon: Brain,
+    icon: "🧠",
     title: "Multiple Issues",
     description: "Anxiety, stress, sleep, eating, academic pressure - we're equipped to help with it all.",
     color: "from-pink-400 to-rose-400"
@@ -76,7 +75,7 @@ export default function Features() {
               </div>
               
               <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${feature.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <feature.icon className="w-8 h-8 text-white" />
+                <span className="text-3xl">{feature.icon}</span>
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300">
                 {feature.title}

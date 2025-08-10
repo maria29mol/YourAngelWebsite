@@ -1,27 +1,26 @@
 import React from 'react';
-import { TrendingUp, Users, Heart, Zap } from 'lucide-react';
 
 const stats = [
   {
-    icon: Users,
+    icon: "👥",
     number: "1 in 5",
     label: "Teens experience mental health issues",
     color: "text-blue-400"
   },
   {
-    icon: TrendingUp,
+    icon: "📈",
     number: "70%",
     label: "Don't receive adequate help",
     color: "text-purple-400"
   },
   {
-    icon: Heart,
+    icon: "💖",
     number: "24/7",
     label: "YourAngel is always available",
     color: "text-pink-400"
   },
   {
-    icon: Zap,
+    icon: "⚡",
     number: "2 Clicks",
     label: "To get the help you need",
     color: "text-yellow-400"
@@ -60,7 +59,7 @@ export default function Stats() {
             >
               <div className="mb-6 flex justify-center">
                 <div className="p-6 bg-white/5 rounded-full border border-white/10 group-hover:border-white/30 transition-colors">
-                  <stat.icon className={`w-12 h-12 ${stat.color}`} />
+                  <span className="text-4xl">{stat.icon}</span>
                 </div>
               </div>
               <div className={`text-5xl md:text-6xl font-black mb-4 ${stat.color}`}>

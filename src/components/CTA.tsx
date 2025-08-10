@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ArrowRight, Mail, CheckCircle, Sparkles, User, Globe, Calendar, Heart, Radio } from 'lucide-react';
 import { supabase, type EarlyAccessUser } from '../lib/supabase';
 
 const countries = [
@@ -183,7 +182,7 @@ export default function CTA() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8">
-            <Sparkles className="w-16 h-16 text-yellow-400 mx-auto mb-6 animate-pulse" />
+            <div className="text-6xl mx-auto mb-6 animate-pulse">✨</div>
             <h2 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
               Be the First to Find Your
               <span className="block bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 bg-clip-text text-transparent leading-relaxed py-2">
@@ -204,7 +203,7 @@ export default function CTA() {
               <div className="max-w-2xl mx-auto space-y-6">
                 {/* Email */}
                 <div className="relative">
-                  <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
+                  <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-2xl text-gray-400">📧</span>
                   <input
                     type="email"
                     name="email"
@@ -220,7 +219,7 @@ export default function CTA() {
                 {/* Country and Age Row */}
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="relative">
-                    <Globe className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
+                    <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-2xl text-gray-400">🌍</span>
                     <select
                       name="country"
                       value={formData.country}
@@ -237,7 +236,7 @@ export default function CTA() {
                   </div>
 
                   <div className="relative">
-                    <Calendar className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
+                    <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-2xl text-gray-400">📅</span>
                     <input
                       type="text"
                       name="age"
@@ -253,7 +252,7 @@ export default function CTA() {
 
                 {/* Gender */}
                 <div className="relative">
-                  <User className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
+                  <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-2xl text-gray-400">👤</span>
                   <select
                     name="gender"
                     value={formData.gender}
@@ -271,7 +270,7 @@ export default function CTA() {
 
                 {/* Main Pain Point (Required) */}
                 <div className="relative">
-                  <Heart className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
+                  <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-2xl text-gray-400">💖</span>
                   <select
                     name="main_pain_point"
                     value={formData.main_pain_point}
@@ -289,7 +288,7 @@ export default function CTA() {
 
                 {/* How did you hear about us */}
                 <div className="relative">
-                  <Radio className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
+                  <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-2xl text-gray-400">📻</span>
                   <select
                     name="how_did_you_hear"
                     value={formData.how_did_you_hear}
@@ -318,7 +317,7 @@ export default function CTA() {
                   className="group w-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold py-6 px-12 rounded-2xl hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-purple-500/50 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {isLoading ? 'Submitting...' : 'Get Early Access'}
-                  {!isLoading && <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />}
+                  {!isLoading && <span className="ml-3 text-2xl group-hover:translate-x-1 transition-transform">→</span>}
                 </button>
 
                 <p className="text-gray-400 text-sm text-center">
@@ -328,7 +327,7 @@ export default function CTA() {
             </form>
           ) : (
             <div className="mb-12 bg-green-500/20 backdrop-blur-sm border border-green-400/30 rounded-2xl p-8 max-w-2xl mx-auto">
-              <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
+              <div className="text-5xl text-green-400 mx-auto mb-4">✅</div>
               <h3 className="text-2xl font-bold text-white mb-2">You're on the list! 🎉</h3>
               <p className="text-green-200">
                 Thank you for joining our early access program. We'll notify you as soon as YourAngel is ready!

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Sparkles, Brain, BookOpen, Target, Zap, Users } from 'lucide-react';
 
 export default function AIExpert() {
   return (
@@ -11,7 +10,7 @@ export default function AIExpert() {
           to="/"
           className="inline-flex items-center text-white hover:text-purple-400 transition-colors group"
         >
-          <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
+          <span className="mr-2 text-xl group-hover:-translate-x-1 transition-transform">←</span>
           Back to Home
         </Link>
       </header>
@@ -22,7 +21,7 @@ export default function AIExpert() {
           {/* Hero Section */}
           <div className="text-center mb-16">
             <div className="inline-flex p-6 bg-purple-500/20 rounded-full mb-8">
-              <Sparkles className="w-16 h-16 text-purple-400" />
+              <span className="text-6xl text-purple-400">✨</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
               AI 
@@ -43,7 +42,7 @@ export default function AIExpert() {
           {/* AI Capabilities */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
-              <Brain className="w-12 h-12 text-purple-400 mb-6" />
+              <span className="text-5xl text-purple-400 mb-6 block">🧠</span>
               <h3 className="text-2xl font-bold text-white mb-4">Teen-Specialized Training</h3>
               <p className="text-gray-300 leading-relaxed">
                 Our AI is trained on thousands of hours of teen-specific mental health data, understanding the unique challenges you face.
@@ -51,7 +50,7 @@ export default function AIExpert() {
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
-              <BookOpen className="w-12 h-12 text-purple-400 mb-6" />
+              <span className="text-5xl text-purple-400 mb-6 block">📖</span>
               <h3 className="text-2xl font-bold text-white mb-4">Evidence-Based Approaches</h3>
               <p className="text-gray-300 leading-relaxed">
                 Incorporates proven therapeutic methods like CBT, DBT, and mindfulness techniques tailored for teenagers.
@@ -59,7 +58,7 @@ export default function AIExpert() {
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
-              <Target className="w-12 h-12 text-purple-400 mb-6" />
+              <span className="text-5xl text-purple-400 mb-6 block">🎯</span>
               <h3 className="text-2xl font-bold text-white mb-4">Personalized Support</h3>
               <p className="text-gray-300 leading-relaxed">
                 Adapts to your communication style, learns your preferences, and provides increasingly personalized guidance.
@@ -67,7 +66,7 @@ export default function AIExpert() {
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
-              <Zap className="w-12 h-12 text-purple-400 mb-6" />
+              <span className="text-5xl text-purple-400 mb-6 block">⚡</span>
               <h3 className="text-2xl font-bold text-white mb-4">Instant Response</h3>
               <p className="text-gray-300 leading-relaxed">
                 Get immediate support when you need it most. No waiting rooms, no appointments - just instant, intelligent help.
@@ -129,7 +128,7 @@ export default function AIExpert() {
               className="inline-flex items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-4 px-8 rounded-full hover:scale-105 transition-transform"
             >
               Experience AI Support
-              <ArrowLeft className="ml-2 w-5 h-5 rotate-180" />
+            <span className="ml-2 text-xl">→</span>
             </Link>
           </div>
         </div>
