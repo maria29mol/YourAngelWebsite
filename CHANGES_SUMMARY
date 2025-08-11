@@ -1,0 +1,185 @@
+# Exact File Differences
+
+## 1. src/index.css
+
+**Added new CSS animations at the end of the file:**
+
+```css
+/* Glitter and floating effects */
+@keyframes glitter {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-glitter {
+  animation: glitter 2s ease-in-out infinite;
+}
+
+.animate-float-card {
+  animation: floatCard 4s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.glitter-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.glitter-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 40% 60%, rgba(236, 72, 153, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 70% 30%, rgba(59, 130, 246, 0.3) 1px, transparent 1px);
+  background-size: 50px 50px, 60px 60px, 40px 40px, 70px 70px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.glitter-container:hover::before {
+  opacity: 1;
+}
+
+.magic-glow {
+  box-shadow: 
+    0 0 20px rgba(139, 92, 246, 0.3),
+    0 0 40px rgba(236, 72, 153, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.magic-glow:hover {
+  box-shadow: 
+    0 0 30px rgba(139, 92, 246, 0.5),
+    0 0 60px rgba(236, 72, 153, 0.3),
+    0 0 90px rgba(59, 130, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+```
+
+## 2. src/components/SafeSecure.tsx
+
+**Line 44-45:** Changed from:
+```tsx
+              <p className="text-gray-300 leading-relaxed">
+                All your conversations are encrypted with military-grade security. Even we can't read your messages - only you have the key.
+```
+To:
+```tsx
+              <p className="text-gray-300 leading-relaxed">
+                All your conversations are encrypted with strong security measures. Even we can't read your messages - only you have the key.
+```
+
+**Line 56-57:** Changed from:
+```tsx
+              <p className="text-gray-300 leading-relaxed">
+                Built on secure data centers with 24/7 monitoring and HIPAA-compliant infrastructure for maximum protection.
+```
+To:
+```tsx
+              <p className="text-gray-300 leading-relaxed">
+                Our infrastructure is built with security as a top priority, using industry-standard protection measures.
+```
+
+**Lines 32, 48, 64, 80:** Added glitter and floating effects to each card div:
+```tsx
+            <div className="glitter-container magic-glow animate-float-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-green-400/30">
+```
+
+**Lines 48, 64, 80:** Added staggered animation delays:
+```tsx
+style={{animationDelay: '0.5s'}}
+style={{animationDelay: '1s'}}
+style={{animationDelay: '1.5s'}}
+```
+
+## 3. src/components/AIExpert.tsx
+
+**Line 44-45:** Changed from:
+```tsx
+              <p className="text-gray-300 leading-relaxed">
+                Incorporates CBT, DBT, and mindfulness techniques backed by thousands of hours of training data.
+```
+To:
+```tsx
+              <p className="text-gray-300 leading-relaxed">
+                Incorporates proven therapeutic approaches and wellness techniques tailored for teenagers.
+```
+
+**Lines 32, 48, 64, 80:** Added glitter and floating effects to each card div:
+```tsx
+            <div className="glitter-container magic-glow animate-float-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-purple-400/30">
+```
+
+**Lines 48, 64, 80:** Added staggered animation delays:
+```tsx
+style={{animationDelay: '0.5s'}}
+style={{animationDelay: '1s'}}
+style={{animationDelay: '1.5s'}}
+```
+
+## 4. src/components/TeenFocused.tsx
+
+**Lines 32, 48, 64, 80:** Added glitter and floating effects to each card div:
+```tsx
+            <div className="glitter-container magic-glow animate-float-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-pink-400/30">
+```
+
+**Lines 48, 64, 80:** Added staggered animation delays:
+```tsx
+style={{animationDelay: '0.5s'}}
+style={{animationDelay: '1s'}}
+style={{animationDelay: '1.5s'}}
+```
+
+## Summary of Changes:
+
+1. **Security Claims Softened:**
+   - "Military-grade security" → "Strong security measures"
+   - "HIPAA-compliant infrastructure" → "Industry-standard protection measures"
+
+2. **AI Training Claims Generalized:**
+   - "CBT, DBT, and mindfulness techniques backed by thousands of hours of training data" → "Proven therapeutic approaches and wellness techniques tailored for teenagers"
+
+3. **Visual Effects Added:**
+   - Glitter overlay effects on hover
+   - Floating card animations with staggered timing
+   - Magic glow effects with multi-layered shadows
+   - Scale and border color transitions on hover
+
+All changes maintain the professional appearance while making claims more defensible and adding beautiful visual effects that match your brand aesthetic.
