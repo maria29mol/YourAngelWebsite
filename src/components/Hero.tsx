@@ -86,15 +86,13 @@ export default function Hero() {
           </div>
 
           {/* Main headline with gradient text */}
-          <h1 className="text-6xl md:text-8xl font-black mb-6 leading-tight relative">
-            <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-shimmer relative z-10">
+          <h1 className="text-6xl md:text-8xl font-black mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-shimmer block relative">
               Your
             </span>
-            <span className="text-white block relative z-10">
+            <span className="text-white block relative">
               Angel
             </span>
-            {/* Subtle glow effect moved outside and with lower z-index */}
-            <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-blue-400/20 blur-2xl opacity-50 animate-pulse -z-10"></div>
           </h1>
 
           {/* Subheadline */}
