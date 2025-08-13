@@ -10,57 +10,102 @@ const scrollToEarlyAccess = () => {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 overflow-hidden pt-20">
       {/* Animated background elements */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Floating geometric shapes */}
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute top-40 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        
+        {/* Trendy gradient mesh */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-30">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-pink-500/30 to-purple-500/30 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-500/30 to-cyan-500/30 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
+        </div>
+        
+        {/* Sparkle effects */}
+        <div className="absolute inset-0">
+          {[...Array(15)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute animate-glitter"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${2 + Math.random() * 2}s`
+              }}
+            >
+              <div className="w-1 h-1 bg-white rounded-full shadow-lg"></div>
+            </div>
+          ))}
+        </div>
       </div>
       
       {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(25)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-white/20 rounded-full animate-float"
+            className="absolute animate-float"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 5}s`,
               animationDuration: `${3 + Math.random() * 4}s`
             }}
-          ></div>
+          >
+            <div className={`rounded-full ${
+              i % 3 === 0 ? 'w-2 h-2 bg-purple-400/30' :
+              i % 3 === 1 ? 'w-1 h-1 bg-pink-400/40' :
+              'w-3 h-3 bg-blue-400/20'
+            }`}></div>
+          </div>
         ))}
       </div>
 
       <div className="relative z-10 container mx-auto px-6 py-20">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Logo */}
-          <div className="mb-8 flex justify-center">
-            <img 
-              src="/logo.png" 
-              alt="YourAngel Logo" 
-             className="h-20 w-auto filter drop-shadow-2xl"
-             style={{
-               filter: 'drop-shadow(0 0 20px rgba(139, 92, 246, 0.6)) drop-shadow(0 0 40px rgba(236, 72, 153, 0.4))'
-             }}
-            />
+          {/* Enhanced Logo */}
+          <div className="mb-8 flex justify-center group">
+            <div className="relative">
+              <img 
+                src="/logo.png" 
+                alt="YourAngel Logo" 
+                className="h-24 w-auto transition-all duration-500 group-hover:scale-110"
+                style={{
+                  filter: 'drop-shadow(0 0 30px rgba(139, 92, 246, 0.8)) drop-shadow(0 0 60px rgba(236, 72, 153, 0.6)) drop-shadow(0 0 90px rgba(59, 130, 246, 0.4))'
+                }}
+              />
+              {/* Glowing ring around logo */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-400/20 via-pink-400/20 to-blue-400/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse"></div>
+              {/* Rotating ring */}
+              <div className="absolute inset-0 rounded-full border-2 border-gradient-to-r from-purple-400/30 via-pink-400/30 to-blue-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-spin" style={{animationDuration: '8s'}}></div>
+            </div>
           </div>
 
           {/* Main headline with gradient text */}
-          <h1 className="text-6xl md:text-8xl font-black mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-gradient">
+          <h1 className="text-6xl md:text-8xl font-black mb-6 leading-tight relative">
+            <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-shimmer">
               Your
             </span>
-            <span className="text-white block">Angel</span>
+            <span className="text-white block relative">
+              Angel
+              {/* Subtle glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-blue-400/20 blur-2xl opacity-50 animate-pulse"></div>
+            </span>
           </h1>
 
           {/* Subheadline */}
           <div className="mb-8">
             <p className="text-2xl md:text-3xl text-gray-200 font-light mb-4">
               Mental health support in 
-              <span className="font-bold text-yellow-400 mx-2 animate-pulse">2 clicks</span>
+              <span className="font-bold text-yellow-400 mx-2 animate-pulse relative">
+                2 clicks
+                <div className="absolute inset-0 bg-yellow-400/20 blur-lg animate-pulse"></div>
+              </span>
             </p>
             <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
               AI-powered crisis support designed specifically for teens. 
