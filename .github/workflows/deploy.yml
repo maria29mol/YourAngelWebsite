@@ -1,9 +1,9 @@
-name: Deploy Vite React site
+name: Deploy Vite React site to gh-pages
 
 on:
   push:
     branches:
-      - main  # or the branch you want to deploy from
+      - main  # your source code branch
 
 jobs:
   build-and-deploy:
@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # ensures full history for gh-pages
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -27,8 +29,10 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          # Target branch where the site will be deployed
+          publish_branch: gh-pages
