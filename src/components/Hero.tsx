@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const scrollToEarlyAccess = () => {
   const element = document.getElementById('early-access');
@@ -10,7 +9,7 @@ const scrollToEarlyAccess = () => {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 overflow-hidden pt-20">
+    <section className="relative min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating geometric shapes */}
@@ -115,27 +114,18 @@ export default function Hero() {
 
           {/* Key features badges */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <Link 
-              to="/safe-secure"
-              className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-green-400/50 hover:shadow-lg hover:shadow-green-400/30 hover:scale-105 transition-all duration-300 cursor-pointer group animate-pulse hover:animate-none"
-            >
+            <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-green-400/50 hover:shadow-lg hover:shadow-green-400/30 hover:scale-105 transition-all duration-300 cursor-pointer group animate-pulse hover:animate-none">
               <span className="text-green-400 mr-2">🛡️</span>
               <span className="text-white font-medium group-hover:text-green-400 transition-colors">Safe & Secure</span>
-            </Link>
-            <Link 
-              to="/ai-expert"
-              className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-purple-400/50 hover:shadow-lg hover:shadow-purple-400/30 hover:scale-105 transition-all duration-300 cursor-pointer group animate-pulse hover:animate-none"
-            >
+            </div>
+            <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-purple-400/50 hover:shadow-lg hover:shadow-purple-400/30 hover:scale-105 transition-all duration-300 cursor-pointer group animate-pulse hover:animate-none">
               <span className="text-purple-400 mr-2">✨</span>
               <span className="text-white font-medium group-hover:text-purple-400 transition-colors">AI Expert</span>
-            </Link>
-            <Link 
-              to="/teen-focused"
-              className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-pink-400/50 hover:shadow-lg hover:shadow-pink-400/30 hover:scale-105 transition-all duration-300 cursor-pointer group animate-pulse hover:animate-none"
-            >
+            </div>
+            <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-pink-400/50 hover:shadow-lg hover:shadow-pink-400/30 hover:scale-105 transition-all duration-300 cursor-pointer group animate-pulse hover:animate-none">
               <span className="text-pink-400 mr-2">💖</span>
               <span className="text-white font-medium group-hover:text-pink-400 transition-colors">Teen-Focused</span>
-            </Link>
+            </div>
           </div>
 
           {/* Privacy Assurance Badge */}
