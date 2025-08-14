@@ -128,7 +128,7 @@ export default function Hero() {
 
           {/* Privacy Assurance Badge */}
           <div className="mb-8">
-            <div className="flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
+            <div className="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
               <span className="text-blue-400 mr-2">🔒</span>
               <span className="text-white font-medium">Your data will NOT be shared under ANY circumstance</span>
             </div>
@@ -143,7 +143,7 @@ export default function Hero() {
               Get Early Access
               <span className="ml-3 text-2xl group-hover:translate-x-1 transition-transform">→</span>
             </button>
-            <p className="text-gray-400 mt-4 text-sm">Be among the first to get early access</p>
+            <div className="text-gray-400 mt-4 text-sm text-center">Be among the first to get early access</div>
           </div>
         </div>
       </div>
