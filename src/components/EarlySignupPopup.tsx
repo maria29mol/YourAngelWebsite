@@ -4,18 +4,21 @@ export default function EarlySignupPopup() {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    // Check if user has already seen the popup
-    const hasSeenPopup = localStorage.getItem('hasSeenEarlySignupPopup');
+    console.log('EarlySignupPopup component mounted');
     
-    // Show popup after 3 seconds if not seen before
-    if (!hasSeenPopup) {
-      const timer = setTimeout(() => {
-        setShowPopup(true);
-      }, 3000);
-      
-      return () => clearTimeout(timer);
-    }
+    // Always show popup after 2 seconds for testing
+    const timer = setTimeout(() => {
+      console.log('Timer triggered, showing popup');
+      setShowPopup(true);
+    }, 2000);
+    
+    return () => {
+      console.log('Cleanup timer');
+      clearTimeout(timer);
+    };
   }, []);
+
+  console.log('EarlySignupPopup render, showPopup:', showPopup);
 
   const handleClose = () => {
     localStorage.setItem('hasSeenEarlySignupPopup', 'true');
