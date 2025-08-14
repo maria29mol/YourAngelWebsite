@@ -15,8 +15,10 @@
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     
-    <!-- Content-Security-Policy to allow images from self or base64 -->
-    <meta http-equiv="Content-Security-Policy" content="img-src 'self' data:;">
+    <!-- Security policies -->
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="credentialless">
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+    <meta http-equiv="Content-Security-Policy" content="img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:;">
   </head>
   <body>
     <div id="root"></div>
