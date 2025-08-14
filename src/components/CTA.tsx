@@ -184,17 +184,16 @@ export default function CTA() {
           <div className="mb-8">
             <div className="text-6xl mx-auto mb-6 animate-pulse">✨</div>
             <h2 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
-              Be the First to Find Your
+              Skip the Waitlist &
               <span className="block bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 bg-clip-text text-transparent leading-relaxed py-2">
-                Light Path
+                Get VIP Access
               </span>
             </h2>
             <p className="text-2xl text-gray-200 mb-4">
-              Be the first to experience YourAngel
+              Join the exclusive early access program
             </p>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-              Get exclusive early access, 
-              help shape the future of teen mental health, and never feel alone again.
+              Only 1,000 spots available. Be part of the select few who get to experience YourAngel before everyone else.
             </p>
           </div>
 
@@ -338,18 +337,18 @@ export default function CTA() {
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
               <div className="text-3xl mb-4">🚀</div>
-              <h3 className="text-xl font-bold text-white mb-2">Early Access</h3>
-              <p className="text-gray-300">Be the first to try YourAngel before public launch</p>
+              <h3 className="text-xl font-bold text-white mb-2">Skip the Line</h3>
+              <p className="text-gray-300">Jump ahead of thousands on the waitlist</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
               <div className="text-3xl mb-4">💝</div>
-              <h3 className="text-xl font-bold text-white mb-2">Free Forever</h3>
-              <p className="text-gray-300">Early adopters get lifetime free access to premium features</p>
+              <h3 className="text-xl font-bold text-white mb-2">VIP Treatment</h3>
+              <p className="text-gray-300">Exclusive perks, priority support, and special recognition</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
               <div className="text-3xl mb-4">🎯</div>
-              <h3 className="text-xl font-bold text-white mb-2">Shape the Future</h3>
-              <p className="text-gray-300">Your feedback will directly influence YourAngel's development</p>
+              <h3 className="text-xl font-bold text-white mb-2">Limited Spots</h3>
+              <p className="text-gray-300">Only 1,000 early access spots - claim yours now</p>
             </div>
           </div>
         </div>

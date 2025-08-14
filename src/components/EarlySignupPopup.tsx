@@ -112,15 +112,15 @@ export default function EarlySignupPopup() {
             <div className="space-y-3 mb-8">
               <div className="flex items-center justify-center gap-3 text-sm text-gray-300">
                 <span className="text-green-400">✨</span>
-                <span>Free lifetime access to premium features</span>
+                <span>Skip the waitlist - Get instant access</span>
               </div>
               <div className="flex items-center justify-center gap-3 text-sm text-gray-300">
                 <span className="text-blue-400">🚀</span>
-                <span>First to try new features</span>
+                <span>Exclusive beta tester status</span>
               </div>
               <div className="flex items-center justify-center gap-3 text-sm text-gray-300">
                 <span className="text-purple-400">💝</span>
-                <span>Help shape YourAngel's development</span>
+                <span>VIP early adopter perks</span>
               </div>
             </div>
 
