@@ -4,15 +4,14 @@ export default function EarlySignupPopup() {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    // Check if user has already seen the popup or made cookie choice
+    // Check if user has already seen the popup
     const hasSeenPopup = localStorage.getItem('hasSeenEarlySignupPopup');
-    const cookieConsent = localStorage.getItem('cookieConsent');
     
-    // Show popup 2 seconds after cookie consent is given and if not seen before
-    if (cookieConsent && !hasSeenPopup) {
+    // Show popup after 3 seconds if not seen before
+    if (!hasSeenPopup) {
       const timer = setTimeout(() => {
         setShowPopup(true);
-      }, 2000);
+      }, 3000);
       
       return () => clearTimeout(timer);
     }
