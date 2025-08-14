@@ -304,6 +304,18 @@ section {
   animation: gradientShift 6s ease infinite;
 }
 
+/* Popup animations */
+@keyframes popupSlideIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
 /* Glass morphism effects */
 .glass-effect {
   background: rgba(255, 255, 255, 0.05);

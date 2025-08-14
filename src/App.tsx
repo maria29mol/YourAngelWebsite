@@ -5,6 +5,7 @@ import Stats from './components/Stats';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
+import EarlySignupPopup from './components/EarlySignupPopup';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <CTA />
       <Footer />
       <CookieConsent />
+      <EarlySignupPopup />
     </div>
   );
 }
