@@ -112,7 +112,7 @@ export default function EarlySignupPopup() {
             <div className="space-y-3 mb-8">
               <div className="flex items-center justify-center gap-3 text-sm text-gray-300">
                 <span className="text-green-400">✨</span>
-                <span>Skip the waitlist - Get instant access</span>
+                <span>First 1,000 users get exclusive access</span>
               </div>
               <div className="flex items-center justify-center gap-3 text-sm text-gray-300">
                 <span className="text-blue-400">🚀</span>
