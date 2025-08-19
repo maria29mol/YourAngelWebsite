@@ -2,12 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/logo.png" type="image/png" />
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=" /> 
-    <meta http-equiv="Content-Security-Policy" 
-      content="default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; connect-src 'self' https:; font-src 'self' https:;">
 
-    
+    <!-- Explicit favicon definitions -->
+    <link rel="icon" href="/logo.png" type="image/png" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" /> 
+
+    <!-- CSP: allow favicon.ico + images -->
+    <meta http-equiv="Content-Security-Policy" 
+      content="default-src 'self'; 
+               img-src 'self' data: https:; 
+               script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; 
+               style-src 'self' 'unsafe-inline' https:; 
+               connect-src 'self' https:; 
+               font-src 'self' https:;">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YourAngel - Mental Health AI for Teens | 2-Click Crisis Support</title>
     
@@ -18,15 +27,12 @@
     <meta property="og:description" content="24/7 AI-powered crisis support designed specifically for teenagers. Get help in just 2 clicks." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    
-    <!-- Security policies -->
     <script type="module" crossorigin src="/assets/index-w6V4hA7I.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-C9qzrxOw.css">
   </head>
   <body>
     <div id="root"></div>
 
-    <!-- Production-ready script reference: 
-         Vite will replace this with the built JS in /assets on build -->
+    <!-- Vite entry -->
   </body>
 </html>
