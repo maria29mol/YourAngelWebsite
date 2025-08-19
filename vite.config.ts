@@ -14,7 +14,7 @@ export default defineConfig({
       }
     }
   ],
-  base: "/", // important for gh-pages root
+  base: "/",
   optimizeDeps: {
     exclude: ["lucide-react"],
   },
