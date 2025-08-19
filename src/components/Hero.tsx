@@ -93,7 +93,9 @@ export default function Hero() {
             <span className="block relative font-black bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent hover:from-cyan-300 hover:via-purple-300 hover:to-pink-300 transition-all duration-500 cursor-pointer tracking-wide animate-pulse hover:animate-none -mt-4"
                   style={{
                     textShadow: '0 0 30px rgba(139, 92, 246, 0.5), 0 0 60px rgba(236, 72, 153, 0.3)',
-                    filter: 'drop-shadow(0 0 20px rgba(139, 92, 246, 0.4))'
+                    filter: 'drop-shadow(0 0 20px rgba(139, 92, 246, 0.4))',
+                    lineHeight: '1.2',
+                    paddingBottom: '0.2em'
                   }}>
               Angel
             </span>
