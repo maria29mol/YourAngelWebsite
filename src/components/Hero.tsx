@@ -90,9 +90,6 @@ export default function Hero() {
             <span className="text-white block relative">
               Your
             </span>
-            <span className="block relative bg-gradient-to-r from-purple-200 via-pink-200 to-purple-300 bg-clip-text text-transparent hover:from-purple-300 hover:via-pink-300 hover:to-purple-400 transition-all duration-700 cursor-pointer tracking-wider font-light">
-              Angel
-            </span>
             <span className="block relative font-black bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent hover:from-cyan-300 hover:via-purple-300 hover:to-pink-300 transition-all duration-500 cursor-pointer tracking-wide animate-pulse hover:animate-none"
                   style={{
                     textShadow: '0 0 30px rgba(139, 92, 246, 0.5), 0 0 60px rgba(236, 72, 153, 0.3)',
