@@ -3,30 +3,25 @@
   <head>
     <meta charset="UTF-8" />
 
-    <!-- Favicon: support both ICO (fallback) + PNG (modern browsers) -->
+    <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/logo.png" type="image/png" />
 
-    <!-- Security: CSP allows favicon + all safe assets -->
+    <!-- Only ONE CSP -->
     <meta http-equiv="Content-Security-Policy"
-      content="
-        default-src 'self';
-        img-src 'self' data: https:;
-        script-src 'self' 'unsafe-inline' 'unsafe-eval' https:;
-        style-src 'self' 'unsafe-inline' https:;
-        connect-src 'self' https:;
-        font-src 'self' https:;
-      ">
+      content="default-src 'self';
+               img-src 'self' data: https:;
+               script-src 'self' 'unsafe-inline' 'unsafe-eval' https:;
+               style-src 'self' 'unsafe-inline' https:;
+               connect-src 'self' https:;
+               font-src 'self' https:;">
 
-    <!-- Mobile-friendly -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Title & SEO -->
     <title>YourAngel - Mental Health AI for Teens | 2-Click Crisis Support</title>
+
+    <!-- SEO -->
     <meta name="description" content="YourAngel provides 24/7 AI-powered mental health support for teenagers. Get help with anxiety, stress, and crisis situations in just 2 clicks. Safe, secure, and teen-focused." />
     <meta name="keywords" content="teen mental health, AI therapy, crisis support, anxiety help, teenage counseling, mental health app" />
-
-    <!-- Open Graph / Social Preview -->
     <meta property="og:title" content="YourAngel - Mental Health AI for Teens" />
     <meta property="og:description" content="24/7 AI-powered crisis support designed specifically for teenagers. Get help in just 2 clicks." />
     <meta property="og:type" content="website" />
@@ -36,7 +31,5 @@
   </head>
   <body>
     <div id="root"></div>
-
-    <!-- Vite injects JS bundle -->
   </body>
 </html>
