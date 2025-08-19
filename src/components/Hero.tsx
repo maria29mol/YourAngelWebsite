@@ -93,6 +93,13 @@ export default function Hero() {
             <span className="block relative bg-gradient-to-r from-purple-200 via-pink-200 to-purple-300 bg-clip-text text-transparent hover:from-purple-300 hover:via-pink-300 hover:to-purple-400 transition-all duration-700 cursor-pointer tracking-wider font-light">
               Angel
             </span>
+            <span className="block relative font-black bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent hover:from-cyan-300 hover:via-purple-300 hover:to-pink-300 transition-all duration-500 cursor-pointer tracking-wide animate-pulse hover:animate-none"
+                  style={{
+                    textShadow: '0 0 30px rgba(139, 92, 246, 0.5), 0 0 60px rgba(236, 72, 153, 0.3)',
+                    filter: 'drop-shadow(0 0 20px rgba(139, 92, 246, 0.4))'
+                  }}>
+              Angel
+            </span>
           </h1>
 
           {/* Subheadline */}
@@ -112,17 +119,17 @@ export default function Hero() {
 
           {/* Key features badges */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-green-400/50 hover:shadow-lg hover:shadow-green-400/30 hover:scale-105 transition-all duration-300 cursor-pointer group animate-pulse hover:animate-none">
-              <span className="text-green-400 mr-2">🛡️</span>
-              <span className="text-white font-medium group-hover:text-green-400 transition-colors">Safe & Secure</span>
+            <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-10 py-5 border border-white/20 hover:bg-white/20 hover:border-green-400/50 hover:shadow-lg hover:shadow-green-400/30 hover:scale-105 transition-all duration-300 cursor-pointer group animate-pulse hover:animate-none">
+              <span className="text-green-400 mr-3 text-2xl">🛡️</span>
+              <span className="text-white font-medium text-lg group-hover:text-green-400 transition-colors">Safe & Secure</span>
             </div>
-            <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-purple-400/50 hover:shadow-lg hover:shadow-purple-400/30 hover:scale-105 transition-all duration-300 cursor-pointer group animate-pulse hover:animate-none">
-              <span className="text-purple-400 mr-2">✨</span>
-              <span className="text-white font-medium group-hover:text-purple-400 transition-colors">AI Expert</span>
+            <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-10 py-5 border border-white/20 hover:bg-white/20 hover:border-purple-400/50 hover:shadow-lg hover:shadow-purple-400/30 hover:scale-105 transition-all duration-300 cursor-pointer group animate-pulse hover:animate-none">
+              <span className="text-purple-400 mr-3 text-2xl">✨</span>
+              <span className="text-white font-medium text-lg group-hover:text-purple-400 transition-colors">AI Expert</span>
             </div>
-            <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20 hover:bg-white/20 hover:border-pink-400/50 hover:shadow-lg hover:shadow-pink-400/30 hover:scale-105 transition-all duration-300 cursor-pointer group animate-pulse hover:animate-none">
-              <span className="text-pink-400 mr-2">💖</span>
-              <span className="text-white font-medium group-hover:text-pink-400 transition-colors">Teen-Focused</span>
+            <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-10 py-5 border border-white/20 hover:bg-white/20 hover:border-pink-400/50 hover:shadow-lg hover:shadow-pink-400/30 hover:scale-105 transition-all duration-300 cursor-pointer group animate-pulse hover:animate-none">
+              <span className="text-pink-400 mr-3 text-2xl">💖</span>
+              <span className="text-white font-medium text-lg group-hover:text-pink-400 transition-colors">Teen-Focused</span>
             </div>
           </div>
 
