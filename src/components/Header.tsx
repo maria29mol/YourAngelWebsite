@@ -5,7 +5,10 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
-    if (sectionId === 'more') {
+    if (sectionId === 'blog') {
+      // Navigate to blog page
+      window.location.href = '/blog';
+    } else if (sectionId === 'more') {
       // Scroll to bottom of page
       window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     } else {
@@ -98,8 +101,8 @@ export default function Header() {
                 {[
                   { label: 'Our Mission', id: 'mission' },
                   { label: 'Our Values', id: 'values' },
-                  { label: 'About the Team', id: 'team' },
                   { label: 'Blog', id: 'blog' },
+                  { label: 'About the Team', id: 'team' },
                   { label: 'Achievements', id: 'achievements' },
                   { label: 'More', id: 'more' }
                 ].map((item, index) => (

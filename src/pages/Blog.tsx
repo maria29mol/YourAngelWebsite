@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Calendar, Clock, ArrowRight, X, User } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, ArrowRight, X, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface Article {
   id: string;
@@ -18,9 +19,9 @@ const articles: Article[] = [
     id: '1',
     title: 'Loneliness in the Age of Connection: Why it happens and how to address it',
     excerpt: 'In an age where you can reach and connect with millions of people all over the world, why do we feel like we are further isolated?',
-    date: 'January 15, 2025',
-    readTime: '8 min read',
-    author: 'YourAngel Team',
+    date: 'August 13, 2025',
+    readTime: '4 min read',
+    author: 'Siddarth Maddur',
     category: 'Mental Health',
     gradient: 'from-purple-500/20 via-pink-500/20 to-blue-500/20',
     content: `
@@ -72,62 +73,6 @@ const articles: Article[] = [
         </div>
       </div>
     `
-  },
-  // Placeholder articles for the grid
-  {
-    id: '2',
-    title: 'Managing Academic Stress: A Teen\'s Guide to Success',
-    excerpt: 'School pressure getting to you? Learn practical strategies to handle academic stress while maintaining your mental health.',
-    date: 'January 10, 2025',
-    readTime: '6 min read',
-    author: 'YourAngel Team',
-    category: 'Academic Wellness',
-    gradient: 'from-blue-500/20 via-cyan-500/20 to-teal-500/20',
-    content: '<div class="prose prose-lg prose-invert max-w-none"><p class="text-xl text-gray-300">Coming soon...</p></div>'
-  },
-  {
-    id: '3',
-    title: 'Social Media and Mental Health: Finding Balance',
-    excerpt: 'How to use social media mindfully and protect your mental health in the digital age.',
-    date: 'January 5, 2025',
-    readTime: '7 min read',
-    author: 'YourAngel Team',
-    category: 'Digital Wellness',
-    gradient: 'from-green-500/20 via-emerald-500/20 to-cyan-500/20',
-    content: '<div class="prose prose-lg prose-invert max-w-none"><p class="text-xl text-gray-300">Coming soon...</p></div>'
-  },
-  {
-    id: '4',
-    title: 'Building Healthy Relationships as a Teenager',
-    excerpt: 'Navigate friendships, family relationships, and romantic connections with confidence and authenticity.',
-    date: 'December 28, 2024',
-    readTime: '9 min read',
-    author: 'YourAngel Team',
-    category: 'Relationships',
-    gradient: 'from-pink-500/20 via-rose-500/20 to-red-500/20',
-    content: '<div class="prose prose-lg prose-invert max-w-none"><p class="text-xl text-gray-300">Coming soon...</p></div>'
-  },
-  {
-    id: '5',
-    title: 'Understanding Anxiety: What Every Teen Should Know',
-    excerpt: 'Demystify anxiety, learn to recognize the signs, and discover effective coping strategies.',
-    date: 'December 20, 2024',
-    readTime: '8 min read',
-    author: 'YourAngel Team',
-    category: 'Mental Health',
-    gradient: 'from-yellow-500/20 via-orange-500/20 to-red-500/20',
-    content: '<div class="prose prose-lg prose-invert max-w-none"><p class="text-xl text-gray-300">Coming soon...</p></div>'
-  },
-  {
-    id: '6',
-    title: 'Self-Care Isn\'t Selfish: A Teen\'s Self-Care Guide',
-    excerpt: 'Learn why self-care is essential and discover practical ways to prioritize your wellbeing.',
-    date: 'December 15, 2024',
-    readTime: '5 min read',
-    author: 'YourAngel Team',
-    category: 'Self-Care',
-    gradient: 'from-indigo-500/20 via-purple-500/20 to-pink-500/20',
-    content: '<div class="prose prose-lg prose-invert max-w-none"><p class="text-xl text-gray-300">Coming soon...</p></div>'
   }
 ];
 
@@ -145,7 +90,7 @@ export default function Blog() {
   };
 
   return (
-    <section id="blog" className="py-24 bg-gradient-to-b from-black via-gray-900 to-purple-900/20 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-purple-900/20 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -154,24 +99,34 @@ export default function Blog() {
         }}></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-flex p-6 bg-purple-500/20 rounded-full mb-8">
+      <div className="container mx-auto px-6 py-32 relative z-10">
+        {/* Back Button */}
+        <Link 
+          to="/"
+          className="inline-flex items-center gap-3 mb-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-3 hover:bg-white/20 hover:scale-105 transition-all duration-300 text-white font-medium group"
+        >
+          <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+          Back to Home
+        </Link>
+
+        {/* Hero Section */}
+        <div className="text-center mb-20">
+          <div className="inline-flex p-8 bg-purple-500/20 rounded-full mb-8 animate-pulse">
             <span className="text-6xl text-purple-400">📝</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-6">
+          <h1 className="text-6xl md:text-8xl font-black text-white mb-8">
             Our 
-            <span className="block bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-gradient-shift">
               Blog
             </span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          </h1>
+          <p className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Real talk about mental health, written by teens for teens. No fluff, just honest insights and practical advice.
           </p>
         </div>
 
         {/* Articles Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {articles.map((article, index) => (
             <article 
               key={article.id}
@@ -224,6 +179,42 @@ export default function Blog() {
                 </div>
               </div>
             </article>
+          ))}
+
+          {/* Placeholder cards for future articles */}
+          {[...Array(5)].map((_, index) => (
+            <div 
+              key={`placeholder-${index}`}
+              className="glitter-container magic-glow animate-float-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 opacity-50"
+              style={{animationDelay: `${(index + 1) * 0.2}s`}}
+            >
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-gray-500/20 to-gray-600/20 border border-white/20 mb-6">
+                <span className="text-gray-400 font-medium text-sm">Coming Soon</span>
+              </div>
+              
+              <div className="h-16 bg-gray-600/20 rounded-lg mb-4"></div>
+              <div className="h-20 bg-gray-600/10 rounded-lg mb-6"></div>
+              
+              <div className="flex items-center justify-between text-sm text-gray-500 mb-6">
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4" />
+                    <span>TBD</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-4 h-4" />
+                    <span>-- min read</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-gray-600/20 rounded-full"></div>
+                  <span className="text-gray-500 font-medium">Author TBD</span>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
@@ -298,24 +289,27 @@ export default function Blog() {
                 <div className="mt-12 p-8 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/30 rounded-2xl text-center">
                   <h3 className="text-2xl font-bold text-white mb-4">Need Support Right Now?</h3>
                   <p className="text-gray-200 mb-6">YourAngel is here for you 24/7. Get the help you deserve.</p>
-                  <button 
+                  <Link 
+                    to="/"
                     onClick={() => {
                       closeArticle();
-                      const element = document.getElementById('early-access');
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
+                      setTimeout(() => {
+                        const element = document.getElementById('early-access');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }, 100);
                     }}
                     className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-4 px-8 rounded-full hover:scale-105 transition-transform duration-300 shadow-2xl"
                   >
                     Get Early Access
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
       )}
-    </section>
+    </div>
   );
 }

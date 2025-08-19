@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
+import Blog from './pages/Blog';
 import SafeSecure from './pages/SafeSecure';
 import AIExpert from './pages/AIExpert';
 import TeenFocused from './pages/TeenFocused';
@@ -14,6 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/safe-secure" element={<SafeSecure />} />
         <Route path="/ai-expert" element={<AIExpert />} />
         <Route path="/teen-focused" element={<TeenFocused />} />
