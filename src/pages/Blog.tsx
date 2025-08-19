@@ -182,11 +182,11 @@ export default function Blog() {
           ))}
 
           {/* Placeholder cards for future articles */}
-          {[...Array(5)].map((_, index) => (
+          {[...Array(4)].map((_, index) => (
             <div 
-              key={`placeholder-${index}`}
+              key={`placeholder-${index + 2}`}
               className="glitter-container magic-glow animate-float-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 opacity-50"
-              style={{animationDelay: `${(index + 1) * 0.2}s`}}
+              style={{animationDelay: `${(index + 2) * 0.2}s`}}
             >
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-gray-500/20 to-gray-600/20 border border-white/20 mb-6">
                 <span className="text-gray-400 font-medium text-sm">Coming Soon</span>
