@@ -238,6 +238,32 @@ img[src=""] {
     0 0 90px rgba(59, 130, 246, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
+
+/* Line clamp utilities */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Article content styling */
+.article-content h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-content p {
+  margin-bottom: 1.5rem;
+}
+
+.article-content ul {
+  margin-bottom: 2rem;
+}
+
+.article-content blockquote {
+  margin: 2rem 0;
+}
 /* Smooth section transitions */
 section {
   position: relative;
