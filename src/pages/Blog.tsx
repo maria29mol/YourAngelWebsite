@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Calendar, Clock, ArrowRight, X, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -135,6 +136,16 @@ const articles: Article[] = [
 
 export default function Blog() {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const openArticle = (article: Article) => {
     setSelectedArticle(article);
@@ -145,6 +156,63 @@ export default function Blog() {
     setSelectedArticle(null);
     document.body.style.overflow = 'unset'; // Restore scrolling
   };
+
+  // Loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-purple-900/20 relative overflow-hidden flex items-center justify-center">
+        {/* Background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 25% 25%, purple 2px, transparent 2px)`,
+            backgroundSize: '50px 50px'
+          }}></div>
+        </div>
+
+        {/* Loading content */}
+        <div className="relative z-10 text-center">
+          {/* Animated logo */}
+          <div className="mb-8 flex justify-center">
+            <div className="relative">
+              <img 
+                src="/logo.png" 
+                alt="YourAngel Logo" 
+                className="h-20 w-auto animate-pulse"
+                style={{
+                  filter: 'drop-shadow(0 0 30px rgba(139, 92, 246, 0.8)) drop-shadow(0 0 60px rgba(236, 72, 153, 0.6))'
+                }}
+              />
+              {/* Rotating ring */}
+              <div className="absolute inset-0 rounded-full border-2 border-gradient-to-r from-purple-400/30 via-pink-400/30 to-blue-400/30 animate-spin opacity-60" style={{animationDuration: '3s'}}></div>
+            </div>
+          </div>
+
+          {/* Loading text */}
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Loading 
+            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent ml-2">
+              Blog
+            </span>
+          </h2>
+          <p className="text-gray-300 mb-8">Preparing amazing content for you...</p>
+
+          {/* Loading dots */}
+          <div className="flex justify-center gap-2">
+            {[...Array(3)].map((_, i) => (
+              <div
+                key={i}
+                className="w-3 h-3 bg-purple-400 rounded-full animate-bounce"
+                style={{
+                  animationDelay: `${i * 0.2}s`,
+                  animationDuration: '1s'
+                }}
+              ></div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-purple-900/20 relative overflow-hidden">
@@ -167,14 +235,14 @@ export default function Blog() {
         </Link>
 
         {/* Hero Section */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <div className="inline-flex p-8 bg-purple-500/20 rounded-full mb-8 animate-pulse">
             <span className="text-6xl text-purple-400">📝</span>
           </div>
-          <h1 className="text-6xl md:text-8xl font-black text-white mb-8">
+          <h1 className="text-6xl md:text-8xl font-black text-white mb-6">
             Our 
             <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-gradient-shift"
-                  style={{lineHeight: '1.4', paddingTop: '0.1em', paddingBottom: '0.3em'}}>
+                  style={{lineHeight: '1.2', paddingTop: '0.05em', paddingBottom: '0.15em', marginTop: '-0.2em'}}>
               Blog
             </span>
           </h1>
