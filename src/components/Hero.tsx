@@ -138,12 +138,54 @@ export default function Hero() {
           <div className="mb-12">
             <button
               onClick={scrollToEarlyAccess}
-              className="group relative inline-flex items-center justify-center px-12 py-6 text-xl font-bold text-white bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-full hover:scale-105 transform transition-all duration-300 shadow-2xl hover:shadow-purple-500/50"
+              className="group relative inline-flex items-center justify-center px-16 py-8 text-2xl font-black text-white bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-full hover:scale-110 transform transition-all duration-300 shadow-2xl hover:shadow-purple-500/50 animate-pulse hover:animate-none border-2 border-white/20 hover:border-white/40"
             >
+              <div className="absolute inset-0 bg-gradient-to-r from-pink-400/20 via-purple-400/20 to-blue-400/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+              <span className="relative z-10">
               Get Early Access
-              <span className="ml-3 text-2xl group-hover:translate-x-1 transition-transform">→</span>
+              </span>
+              <span className="relative z-10 ml-4 text-3xl group-hover:translate-x-2 group-hover:scale-125 transition-all duration-300">🚀</span>
             </button>
-            <div className="text-gray-400 mt-4 text-sm text-center">Be among the first to get early access</div>
+            <div className="text-gray-400 mt-6 text-base text-center font-medium">Be among the first to get early access</div>
+          </div>
+
+          {/* Social Proof Section */}
+          <div className="mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+              {/* Survey Responses */}
+              <div className="text-center group">
+                <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-400/30 rounded-2xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/30 animate-shimmer">
+                  <div className="text-3xl font-black text-green-400 mb-2 group-hover:scale-110 transition-transform">+200</div>
+                  <div className="text-white font-semibold mb-1">Survey Responses</div>
+                  <div className="text-green-300 text-xs opacity-80">in just one week</div>
+                </div>
+              </div>
+
+              {/* Followers */}
+              <div className="text-center group">
+                <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm border border-blue-400/30 rounded-2xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 animate-shimmer" style={{animationDelay: '0.5s'}}>
+                  <div className="text-3xl font-black text-blue-400 mb-2 group-hover:scale-110 transition-transform">+100</div>
+                  <div className="text-white font-semibold">Followers</div>
+                </div>
+              </div>
+
+              {/* Early Registrants */}
+              <div className="text-center group">
+                <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-400/30 rounded-2xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30 animate-shimmer" style={{animationDelay: '1s'}}>
+                  <div className="text-3xl font-black text-purple-400 mb-2 group-hover:scale-110 transition-transform">+50</div>
+                  <div className="text-white font-semibold">Early Registrants</div>
+                </div>
+              </div>
+
+              {/* HUVTSP Alumni */}
+              <div className="text-center group">
+                <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-sm border border-yellow-400/30 rounded-2xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/30 animate-shimmer" style={{animationDelay: '1.5s'}}>
+                  <div className="text-2xl font-black text-yellow-400 mb-2 group-hover:scale-110 transition-transform">🎓</div>
+                  <div className="text-white font-semibold text-sm">HUVTSP Alumni</div>
+                  <div className="text-yellow-300 text-xs opacity-80">Harvard Program</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

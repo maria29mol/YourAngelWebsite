@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function TeenFocused() {
   return (
-    <section className="py-24 bg-gradient-to-b from-blue-900/40 via-pink-900 to-black relative overflow-hidden">
+    <section id="teen-focused" className="py-24 bg-gradient-to-b from-blue-900/40 via-pink-900 to-black relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -29,7 +29,7 @@ export default function TeenFocused() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-pink-400/30">
+          <div className="glitter-container magic-glow animate-float-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-pink-400/30">
             <span className="text-5xl text-pink-400 mb-6 block">💬</span>
             <h3 className="text-2xl font-bold text-white mb-4">Speaks Your Language</h3>
             <p className="text-gray-300 leading-relaxed">
@@ -37,7 +37,7 @@ export default function TeenFocused() {
             </p>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-pink-400/30">
+          <div className="glitter-container magic-glow animate-float-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-pink-400/30" style={{animationDelay: '0.5s'}}>
             <span className="text-5xl text-pink-400 mb-6 block">👥</span>
             <h3 className="text-2xl font-bold text-white mb-4">Understands Teen Issues</h3>
             <p className="text-gray-300 leading-relaxed">
@@ -45,7 +45,7 @@ export default function TeenFocused() {
             </p>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-pink-400/30">
+          <div className="glitter-container magic-glow animate-float-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-pink-400/30" style={{animationDelay: '1s'}}>
             <span className="text-5xl text-pink-400 mb-6 block">💡</span>
             <h3 className="text-2xl font-bold text-white mb-4">Age-Appropriate Solutions</h3>
             <p className="text-gray-300 leading-relaxed">
@@ -53,7 +53,7 @@ export default function TeenFocused() {
             </p>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-pink-400/30">
+          <div className="glitter-container magic-glow animate-float-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:border-pink-400/30" style={{animationDelay: '1.5s'}}>
             <span className="text-5xl text-pink-400 mb-6 block">🛡️</span>
             <h3 className="text-2xl font-bold text-white mb-4">Safe Space</h3>
             <p className="text-gray-300 leading-relaxed">

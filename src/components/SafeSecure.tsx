@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SafeSecure() {
   return (
-    <section className="py-24 bg-gradient-to-b from-black via-gray-900 to-green-900/20 relative overflow-hidden">
+    <section id="safe-secure" className="py-24 bg-gradient-to-b from-black via-gray-900 to-green-900/20 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -33,7 +33,7 @@ export default function SafeSecure() {
             <span className="text-5xl text-green-400 mb-6 block">🔒</span>
             <h3 className="text-2xl font-bold text-white mb-4">End-to-End Encryption</h3>
             <p className="text-gray-300 leading-relaxed">
-              All your conversations are encrypted with military-grade security. Even we can't read your messages - only you have the key.
+              All your conversations are encrypted with strong security measures. Even we can't read your messages - only you have the key.
             </p>
           </div>
 
@@ -49,7 +49,7 @@ export default function SafeSecure() {
             <span className="text-5xl text-green-400 mb-6 block">🖥️</span>
             <h3 className="text-2xl font-bold text-white mb-4">Secure Infrastructure</h3>
             <p className="text-gray-300 leading-relaxed">
-              Built on secure data centers with 24/7 monitoring and HIPAA-compliant infrastructure for maximum protection.
+              Our infrastructure is built with security as a top priority, using industry-standard protection measures.
             </p>
           </div>
 
