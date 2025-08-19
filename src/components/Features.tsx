@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const features = [
   {
@@ -57,61 +58,46 @@ export default function Features() {
           
           {/* Interactive Buttons to Sections */}
           <div className="flex flex-wrap justify-center gap-6 mt-12">
-            <button 
-              onClick={() => {
-                const element = document.getElementById('safe-secure');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="group bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-400/30 rounded-2xl px-8 py-4 hover:from-green-500/30 hover:to-emerald-500/30 hover:border-green-400/50 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-green-500/40"
+            <Link 
+              to="/safe-secure"
+              className="group bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-400/30 rounded-3xl px-12 py-8 hover:from-green-500/30 hover:to-emerald-500/30 hover:border-green-400/50 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-green-500/40"
             >
               <div className="flex items-center gap-3">
-                <span className="text-3xl group-hover:scale-125 transition-transform">🛡️</span>
+                <span className="text-5xl group-hover:scale-125 transition-transform">🛡️</span>
                 <div>
-                  <div className="text-white font-bold text-lg group-hover:text-green-200 transition-colors">Safe & Secure</div>
-                  <div className="text-green-300 text-sm">Military-grade protection</div>
+                  <div className="text-white font-bold text-2xl group-hover:text-green-200 transition-colors">Safe & Secure</div>
+                  <div className="text-green-300 text-lg">Industry-standard protection</div>
                 </div>
               </div>
-            </button>
+            </Link>
 
-            <button 
-              onClick={() => {
-                const element = document.getElementById('ai-expert');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="group bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-400/30 rounded-2xl px-8 py-4 hover:from-purple-500/30 hover:to-pink-500/30 hover:border-purple-400/50 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-purple-500/40"
+            <Link 
+              to="/ai-expert"
+              className="group bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-400/30 rounded-3xl px-12 py-8 hover:from-purple-500/30 hover:to-pink-500/30 hover:border-purple-400/50 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-purple-500/40"
             >
               <div className="flex items-center gap-3">
-                <span className="text-3xl group-hover:scale-125 transition-transform">✨</span>
+                <span className="text-5xl group-hover:scale-125 transition-transform">✨</span>
                 <div>
-                  <div className="text-white font-bold text-lg group-hover:text-purple-200 transition-colors">AI Expert</div>
-                  <div className="text-purple-300 text-sm">Trained for teens</div>
+                  <div className="text-white font-bold text-2xl group-hover:text-purple-200 transition-colors">AI Expert</div>
+                  <div className="text-purple-300 text-lg">Trained for teens</div>
                 </div>
               </div>
-            </button>
-        </div>
+            </Link>
 
-            <button 
-              onClick={() => {
-                const element = document.getElementById('teen-focused');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="group bg-gradient-to-r from-pink-500/20 to-rose-500/20 backdrop-blur-sm border border-pink-400/30 rounded-2xl px-8 py-4 hover:from-pink-500/30 hover:to-rose-500/30 hover:border-pink-400/50 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-pink-500/40"
+            <Link 
+              to="/teen-focused"
+              className="group bg-gradient-to-r from-pink-500/20 to-rose-500/20 backdrop-blur-sm border border-pink-400/30 rounded-3xl px-12 py-8 hover:from-pink-500/30 hover:to-rose-500/30 hover:border-pink-400/50 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-pink-500/40"
             >
               <div className="flex items-center gap-3">
-                <span className="text-3xl group-hover:scale-125 transition-transform">💖</span>
+                <span className="text-5xl group-hover:scale-125 transition-transform">💖</span>
                 <div>
-                  <div className="text-white font-bold text-lg group-hover:text-pink-200 transition-colors">Teen-Focused</div>
-                  <div className="text-pink-300 text-sm">Built by teens, for teens</div>
+                  <div className="text-white font-bold text-2xl group-hover:text-pink-200 transition-colors">Teen-Focused</div>
+                  <div className="text-pink-300 text-lg">Built by teens, for teens</div>
                 </div>
               </div>
-            </button>
+            </Link>
           </div>
+        </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div 

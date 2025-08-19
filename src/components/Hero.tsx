@@ -87,10 +87,10 @@ export default function Hero() {
 
           {/* Main headline with gradient text */}
           <h1 className="text-6xl md:text-8xl font-black mb-6 leading-tight">
-            <span className="text-white block relative">
+            <span className="text-white block relative animate-neon">
               Your
             </span>
-            <span className="text-white block relative">
+            <span className="block relative bg-gradient-to-r from-pink-400 via-purple-400 via-blue-400 via-green-400 via-yellow-400 to-red-400 bg-clip-text text-transparent animate-gradient-shift hover:scale-110 transition-transform duration-500 cursor-pointer">
               Angel
             </span>
           </h1>
