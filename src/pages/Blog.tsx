@@ -73,6 +73,63 @@ const articles: Article[] = [
         </div>
       </div>
     `
+  },
+  {
+    id: '2',
+    title: 'Under the GPA: How Academic Pressure Shapes Teen Mental Health — and What You Can Do',
+    excerpt: 'You\'ve been sitting at your desk for hours, forcing yourself to study for an important test that\'ll determine your entire future. Sounds familiar?',
+    date: 'August 19, 2025',
+    readTime: '3 min read',
+    author: 'Linda Pham',
+    category: 'Academic Stress',
+    gradient: 'from-blue-500/20 via-cyan-500/20 to-teal-500/20',
+    content: `
+      <div class="prose prose-lg prose-invert max-w-none">
+        <p class="text-xl text-gray-300 leading-relaxed mb-8">You've been sitting at your desk for hours, forcing yourself to study for an important test that'll determine your entire future. Sounds familiar? How did that scenario make you feel? If it is anything like the growing pressures of academic stress hitting teens across the world, your thoughts were overwhelmed and probably filled with anxiety.</p>
+        
+        <p class="text-gray-300 leading-relaxed mb-6">Here, we'll be exploring how academic pressure seeps into teens' and students' lives, why it's so commonly normalized, and effective ways to manage academic stress.</p>
+
+        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Understanding Academic Pressure</h2>
+        
+        <p class="text-gray-300 leading-relaxed mb-6">We often treat academic pressure like it's just "part of school life." But the truth? It's much deeper — and much more damaging.</p>
+
+        <p class="text-gray-300 leading-relaxed mb-6">A comprehensive review of <strong class="text-red-400">52 studies</strong> found a strong link between academic pressure and mental health issues in adolescents, including depression, anxiety, and suicidal thoughts. Notably, <strong class="text-orange-400">48 of these studies</strong> reported a positive association between academic pressure and at least one mental health outcome.</p>
+
+        <p class="text-gray-300 leading-relaxed mb-6">In places where academics are stressed in society and often an indicator or a pathway to a successful job, the consequences for students' mental health under this oppressive environment become worse, often fatal. In South Korea, a society known for its emphasis on education, the intense academic pressure has been linked to high suicide rates among students aged 10–19 years old. Studies indicate that <strong class="text-blue-400">46% of high school students in Seoul experience depression</strong> due to academic stress, leading to suicidal ideation and attempts. While this example is extreme, similar patterns show up in schools everywhere, maybe even in yours.</p>
+
+        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Why Is This a Prevalent Issue?</h2>
+        
+        <p class="text-gray-300 leading-relaxed mb-6">As we move into the future, where education becomes increasingly accessible and necessary, it also becomes more competitive. College admissions are tougher than ever. More students are taking AP/IB classes, extracurricular leadership roles, and volunteer work just to stand out. For example, yesterday's <strong class="text-purple-400">12% Harvard acceptance</strong> is today's <strong class="text-pink-400">4%</strong> — making elite college dreams that much harder.</p>
+
+        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Tips to Manage Academic Pressure</h2>
+        
+        <p class="text-gray-300 leading-relaxed mb-6">Although it can be overwhelming and stressful, there are also many coping strategies and tips to get through school while maintaining good mental health. Here are some ways:</p>
+
+        <div class="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-400/30 rounded-2xl p-6 my-8">
+          <h3 class="text-xl font-bold text-white mb-4">1. Break down big goals or tasks into smaller, more manageable pieces</h3>
+          <p class="text-green-200">Instead of focusing on "I need an A this semester," focus on "I'll finish this one assignment today."</p>
+        </div>
+
+        <div class="bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/30 rounded-2xl p-6 my-8">
+          <h3 class="text-xl font-bold text-white mb-4">2. Learn to say "no."</h3>
+          <p class="text-purple-200">You can't join every club, take every AP, or say yes to everything. Overcommitment is a major predictor of academic stress.</p>
+        </div>
+
+        <div class="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/30 rounded-2xl p-6 my-8">
+          <h3 class="text-xl font-bold text-white mb-4">3. Build a supporting community around you.</h3>
+          <p class="text-blue-200">Being able to talk to someone — to friends, parents, or counselors — when you feel pressure building. Outside support is crucial; you can't keep everything to yourself.</p>
+        </div>
+
+        <h2 class="text-3xl font-bold text-white mt-12 mb-6">Takeaways</h2>
+        
+        <p class="text-gray-300 leading-relaxed mb-6">Academic pressure is real, but it doesn't define your worth. By recognizing stress, taking small actionable steps, and reaching out for support, you can manage pressure without letting it consume your life. Start with just one of these strategies today — your mind (and your GPA) will thank you.</p>
+
+        <div class="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-400/30 rounded-2xl p-8 my-12 text-center">
+          <h3 class="text-2xl font-bold text-white mb-4">Remember: You are more than your grades!</h3>
+          <p class="text-2xl font-black text-transparent bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text">Your worth isn't measured by your GPA.</p>
+        </div>
+      </div>
+    `
   }
 ];
 
@@ -116,7 +173,8 @@ export default function Blog() {
           </div>
           <h1 className="text-6xl md:text-8xl font-black text-white mb-8">
             Our 
-            <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-gradient-shift">
+            <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-gradient-shift"
+                  style={{lineHeight: '1.4', paddingTop: '0.1em', paddingBottom: '0.3em'}}>
               Blog
             </span>
           </h1>
@@ -182,11 +240,11 @@ export default function Blog() {
           ))}
 
           {/* Placeholder cards for future articles */}
-          {[...Array(4)].map((_, index) => (
+          {[...Array(5)].map((_, index) => (
             <div 
-              key={`placeholder-${index + 2}`}
+              key={`placeholder-${index}`}
               className="glitter-container magic-glow animate-float-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 opacity-50"
-              style={{animationDelay: `${(index + 2) * 0.2}s`}}
+              style={{animationDelay: `${(index + 1) * 0.2}s`}}
             >
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-gray-500/20 to-gray-600/20 border border-white/20 mb-6">
                 <span className="text-gray-400 font-medium text-sm">Coming Soon</span>
